@@ -14,6 +14,14 @@ public class test : MonoBehaviour
     private List<GraphPositionData> DataList;
 
     /// <summary>
+    /// 
+    /// </summary>
+    void Awake()
+    {
+
+    }
+
+    /// <summary>
     /// 1体のデータを書き出す。
     /// </summary>
     public void Write(GraphPositionData graphPositionData)
