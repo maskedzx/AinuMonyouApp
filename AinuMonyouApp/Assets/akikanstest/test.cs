@@ -30,7 +30,8 @@ public class test : MonoBehaviour
         string path;
         print(json);
 
-        try {
+        try
+        {
             if (Application.platform == RuntimePlatform.WindowsEditor)
             {
                 path = Application.persistentDataPath + "/Database/";
@@ -61,7 +62,7 @@ public class test : MonoBehaviour
             print("例外処理発生");
             print(e.Message);
         }
-            
+
     }
 
     void Start()
@@ -81,12 +82,14 @@ public class test : MonoBehaviour
         te.Number = 1;
         te.GraphType = 1;
         te.Sort = 2;
-        te.PositionX = 40;
-        te.PositionY = 32;
-        te.Rotation = 200;
-        te.ScaleX = 1;
-        te.ScaleY = 1;
-        te.ScalePlusTheta = 1;
-        te.ScaleMinusTheta = 1;
+        te.PositionX = 40 + "";
+        te.PositionY = 32 + "";
+        te.Rotation = 200 + "";
+        te.ScaleX = 1 + "";
+        te.ScaleY = 1 + "";
+        te.ScalePlusTheta = 1 + "";
+        te.ScaleMinusTheta = 1 + "";
+
+        Write(te);
     }
 }
