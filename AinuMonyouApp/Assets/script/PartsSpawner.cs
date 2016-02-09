@@ -5,6 +5,12 @@ public class PartsSpawner : MonoBehaviour {
 
     [SerializeField]
     private GameObject[] parts;
+    [SerializeField]
+    private bool moveMode = true;
+    public bool MoveMode{
+        set { this.moveMode = value; }
+        get {return this.moveMode;}
+    }
 
 	// Use this for initialization
 	void Start () {

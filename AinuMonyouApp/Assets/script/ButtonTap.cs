@@ -26,4 +26,12 @@ public class ButtonTap : MonoBehaviour {
         ps.partsSpawn(buttonNo);
     }
 
+    public void changeMode(){
+        if (ps.MoveMode == true){
+            ps.MoveMode = false;
+        } else {
+            ps.MoveMode = true;
+        }
+    }
+
 }
