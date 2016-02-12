@@ -7,7 +7,9 @@ public class SclloreView : MonoBehaviour {
     [SerializeField]
     private bool operation = false;
     [SerializeField]
-     GameObject 
+    private GameObject menu;
+    private float tmp_x;
+    private float maxps = 220.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -33,7 +35,7 @@ public class SclloreView : MonoBehaviour {
     void OnMouseDown()
     {
         Debug.Log("OnMouseDown");
-        Vector3 screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        Vector3 screenPoint = Camera.main.WorldToScreenPoint(menu.transform.position);
         Vector3 newVecter = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
         Vector2 tapPoint = new Vector2(newVecter.x, newVecter.y);
@@ -57,11 +59,17 @@ public class SclloreView : MonoBehaviour {
             return;
         }
 
-        Vector3 screenPoint = Camera.main.ScreenToWorldPoint(this.transform.position);
+        Vector3 screenPoint = Camera.main.ScreenToWorldPoint(menu.transform.position);
         Vector3 newVecter = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
         Vector2 tapPoint = new Vector2(newVecter.x, newVecter.y);
-        this.transform.position = new Vector2(this.transform.position.x + 20*(tapPoint.x - currentPoint.x), this.transform.position.y);
+        tmp_x = menu.transform.position.x;
+        //if (tmp_x < maxps){
+            menu.transform.position = new Vector2(menu.transform.position.x + 20 * (tapPoint.x - currentPoint.x), menu.transform.position.y);
+        //}
+        //else if (tmp_x >= maxps){
+        //    menu.transform.position = new Vector2(maxps-1, menu.transform.position.y);
+        //}
         currentPoint = tapPoint;
     }
 

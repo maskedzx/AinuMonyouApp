@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21267088}
   - 114: {fileID: 11447914}
   - 58: {fileID: 5826684}
+  - 114: {fileID: 11445638}
   m_Layer: 0
   m_Name: shiku
   m_TagString: Untagged
@@ -43,6 +44,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &11445638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a6594b365b501479268971a5d35a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red: 0
+  blue: 0
+  green: 0
 --- !u!114 &11447914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,6 +69,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18aad7122db4ddc4e9494edc06051a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  operation: 0
+  partsSpawner: {fileID: 0}
+  modeManegerObj: {fileID: 0}
 --- !u!212 &21267088
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -78,7 +96,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9c1ab5fc64bb9d04ca389bf02c29f81d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ade814fdd2a90724bb2f448913120029, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -86,7 +104,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ade814fdd2a90724bb2f448913120029,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 149296}

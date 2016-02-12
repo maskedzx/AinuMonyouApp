@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21267290}
   - 114: {fileID: 11482902}
   - 58: {fileID: 5847284}
+  - 114: {fileID: 11475698}
   m_Layer: 0
   m_Name: moreu1
   m_TagString: Untagged
@@ -43,6 +44,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &11475698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a6594b365b501479268971a5d35a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red: 0
+  blue: 0
+  green: 0
 --- !u!114 &11482902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,6 +69,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18aad7122db4ddc4e9494edc06051a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  operation: 0
+  partsSpawner: {fileID: 0}
+  modeManegerObj: {fileID: 0}
 --- !u!212 &21267290
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -78,7 +96,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 63875957c4772bd4e9ceb8be7754a05f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa1fe0d9629580d40937b69fbb48169e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -86,7 +104,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fa1fe0d9629580d40937b69fbb48169e,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 147928}

@@ -4,7 +4,7 @@ using System.Collections;
 public class PartsMove : MonoBehaviour {
     const float ROATTION_SPEED = 5.0f;
     const float ZOOM_SPEED = 200.0f;
-    const float ROTA_SPEED = 10.0f;
+    const float ROTA_SPEED = 1.0f;
 
     private Vector3 position;
     private float scale_x = 0.0f;
@@ -28,12 +28,19 @@ public class PartsMove : MonoBehaviour {
     [SerializeField]
     private GameObject partsSpawner;
     private PartsSpawner ps;
-
     private bool moveMode;
-
+    private bool notDrag = true;
+    [SerializeField]
+    private GameObject modeManegerObj;
+    private ModeManegr mm;
+    [SerializeField]
+    private bool isMove;
+    
     void Awake(){
         partsSpawner = GameObject.Find("PartsSpawner");
         ps = partsSpawner.GetComponent<PartsSpawner>();
+        modeManegerObj = GameObject.Find("ModeManeger");
+        mm = modeManegerObj.GetComponent<ModeManegr>();
     }
 
 
@@ -69,55 +76,59 @@ public class PartsMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        isMove = mm.IsMove;
         moveMode = ps.MoveMode;
-        if (Input.touchCount == 2 && operation == true && moveMode == true) {
-            if (Input.touches[0].phase == TouchPhase.Began || Input.touches[1].phase == TouchPhase.Began){
-                interval = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
-            }
-            float tmpInterval = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
-            scale_x -= (tmpInterval - interval) / ZOOM_SPEED;
-            scale_y -= (tmpInterval - interval) / ZOOM_SPEED;
-            if (scale_x > 0 || scale_y > 0){
-                scale_x = 0;
-                scale_y = 0;
-            }
-            interval = tmpInterval;
-            this.transform.localScale = new Vector3(-1*(scale_x), -1*(scale_y), 1);
-            isPinched = true;
-
-        } else if (Input.touchCount == 2 && operation == true && moveMode == false){
-            
-            if (Input.touches[0].phase == TouchPhase.Began || Input.touches[1].phase == TouchPhase.Began){
-                interval = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
-            }
-            float tmpInterval = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
-            tmp_rotation = tmpInterval - interval;
-            //if (tmp_rotation < 0){
-                rotation_z -= (tmpInterval - interval) / ROTA_SPEED;
-            //} else {
-            //  rotation_z += (tmpInterval - interval) / ROTA_SPEED;                
-            //}
-            if (rotation_z > 0 || tmp_rotation == 0){
-                rotation_z = 0;
-            }
-            
+            if (Input.touchCount == 2 && operation == true && moveMode == true)
+            {
+                notDrag = false;
+                if (Input.touches[0].phase == TouchPhase.Began || Input.touches[1].phase == TouchPhase.Began)
+                {
+                    interval = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
+                }
+                float tmpInterval = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
+                scale_x -= (tmpInterval - interval) / ZOOM_SPEED;
+                scale_y -= (tmpInterval - interval) / ZOOM_SPEED;
+                if (scale_x > 0 || scale_y > 0)
+                {
+                    scale_x = 0;
+                    scale_y = 0;
+                }
                 interval = tmpInterval;
-                this.transform.Rotate(0, 0, rotation_z);
-            
-            isPinched = true;
-        } else if (isDragging ){
-           
-        }
+                this.transform.localScale = new Vector3(-1 * (scale_x), -1 * (scale_y), 1);
+                isPinched = true;
 
-        if (Input.GetMouseButtonDown(0) && operation == true){
-            OnMouseDown();
-        }
-        if (Input.GetMouseButton(0) && operation == true){
-            OnMouseDrag();
-        }
-        if (Input.GetMouseButtonUp(0) && operation == true){
-            OnMouseUp();
-        }
+            }
+            else if (Input.touchCount == 2 && operation == true && moveMode == false)
+            {
+
+                if (Input.touches[0].phase == TouchPhase.Began || Input.touches[1].phase == TouchPhase.Began)
+                {
+                    interval = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
+                }
+                float tmpInterval = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
+                rotation_z -= (tmpInterval - interval) / ROTA_SPEED;
+                interval = tmpInterval;
+                this.transform.rotation = Quaternion.Euler(0, 0, rotation_z);
+                isPinched = true;
+            }
+            else if (isDragging)
+            {
+
+            }
+
+            if (notDrag == true && Input.GetMouseButtonDown(0) && operation == true)
+            {
+                OnMouseDown();
+            }
+            if (notDrag == true && Input.GetMouseButton(0) && operation == true)
+            {
+                OnMouseDrag();
+            }
+            if (notDrag == true && Input.GetMouseButtonUp(0) && operation == true)
+            {
+                OnMouseUp();
+            }
+        
 	}
 
     void OnMouseDown(){
@@ -142,19 +153,22 @@ public class PartsMove : MonoBehaviour {
         if (!isClicked){
             return;
         }
+        if (isMove == true)
+        {
+            Vector3 screenPoint = Camera.main.ScreenToWorldPoint(this.transform.position);
+            Vector3 newVecter = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
-        Vector3 screenPoint = Camera.main.ScreenToWorldPoint(this.transform.position);
-        Vector3 newVecter = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-
-        Vector2 tapPoint = new Vector2(newVecter.x, newVecter.y);
-        this.transform.position = new Vector2(this.transform.position.x + (tapPoint.x - currentPoint.x), this.transform.position.y + (tapPoint.y - currentPoint.y));
-        currentPoint = tapPoint;
+            Vector2 tapPoint = new Vector2(newVecter.x, newVecter.y);
+            this.transform.position = new Vector2(this.transform.position.x + (tapPoint.x - currentPoint.x), this.transform.position.y + (tapPoint.y - currentPoint.y));
+            currentPoint = tapPoint;
+        }
     }
 
     void OnMouseUp(){
         Debug.Log("OnMouseUp");
         isClicked = false;
         operation = false;
+        notDrag = true;
     }
 
     private void Tap(Vector3 point){
