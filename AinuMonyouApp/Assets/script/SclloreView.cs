@@ -9,7 +9,7 @@ public class SclloreView : MonoBehaviour {
     [SerializeField]
     private GameObject menu;
     private float tmp_x;
-    private float maxps = 220.0f;
+    private float maxps = 280.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -64,12 +64,12 @@ public class SclloreView : MonoBehaviour {
 
         Vector2 tapPoint = new Vector2(newVecter.x, newVecter.y);
         tmp_x = menu.transform.position.x;
-        //if (tmp_x < maxps){
-            menu.transform.position = new Vector2(menu.transform.position.x + 20 * (tapPoint.x - currentPoint.x), menu.transform.position.y);
-        //}
-        //else if (tmp_x >= maxps){
-        //    menu.transform.position = new Vector2(maxps-1, menu.transform.position.y);
-        //}
+        if (tmp_x < maxps){
+            menu.transform.position = new Vector2(menu.transform.position.x + 40 * (tapPoint.x - currentPoint.x), menu.transform.position.y);
+        }
+        else if (tmp_x >= maxps){
+            menu.transform.position = new Vector2(maxps-1, menu.transform.position.y);
+        }
         currentPoint = tapPoint;
     }
 

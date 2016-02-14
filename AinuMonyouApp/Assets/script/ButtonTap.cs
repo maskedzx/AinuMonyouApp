@@ -1,12 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ButtonTap : MonoBehaviour {
-    [SerializeField]
-    private int buttonNo = 0;
-    [SerializeField]
-    private GameObject partsSpawner;
-    private PartsSpawner ps;
     [SerializeField]
     private GameObject modeManegerObj;
     private ModeManegr mm;
@@ -23,6 +19,12 @@ public class ButtonTap : MonoBehaviour {
     private ColorSlider rcs;
     private ColorSlider gcs;
     private ColorSlider bcs;
+    [SerializeField]
+    private GameObject changeModeTextObj;
+    private Text changeModeText;
+    [SerializeField]
+    private GameObject partsSpawner;
+    private PartsSpawner ps;
 
     void Awake(){
         ps = partsSpawner.GetComponent<PartsSpawner>();
@@ -30,6 +32,7 @@ public class ButtonTap : MonoBehaviour {
         rcs = RedSlider.GetComponent<ColorSlider>();
         gcs = GreenSlider.GetComponent<ColorSlider>();
         bcs = BlueSlider.GetComponent<ColorSlider>();
+        changeModeText = changeModeTextObj.GetComponent<Text>();
 
     }
 
@@ -44,17 +47,8 @@ public class ButtonTap : MonoBehaviour {
 	
 	}
 
-    public void partsSet(){
-        ps.partsSpawn(buttonNo);
-    }
 
-    public void changeMode(){
-        if (ps.MoveMode == true){
-            ps.MoveMode = false;
-        } else {
-            ps.MoveMode = true;
-        }
-    }
+
 
     public void ModePartsColor(){
         mm.IsMove = false;

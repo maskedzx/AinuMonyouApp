@@ -98,33 +98,32 @@ public class PartsMove : MonoBehaviour {
                 isPinched = true;
 
             }
-            else if (Input.touchCount == 2 && operation == true && moveMode == false)
-            {
-
-                if (Input.touches[0].phase == TouchPhase.Began || Input.touches[1].phase == TouchPhase.Began)
-                {
+            else if (Input.touchCount == 2 && operation == true && moveMode == false){
+            notDrag = false;
+            if (Input.touches[0].phase == TouchPhase.Began || Input.touches[1].phase == TouchPhase.Began){
                     interval = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
                 }
-                float tmpInterval = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
-                rotation_z -= (tmpInterval - interval) / ROTA_SPEED;
-                interval = tmpInterval;
-                this.transform.rotation = Quaternion.Euler(0, 0, rotation_z);
-                isPinched = true;
+
+            float tmpInterval = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
+            rotation_z -= (tmpInterval - interval) / ROTA_SPEED;
+            interval = tmpInterval;
+            this.transform.rotation = Quaternion.Euler(0, 0, rotation_z);
+            isPinched = true;
             }
             else if (isDragging)
             {
 
             }
 
-            if (notDrag == true && Input.GetMouseButtonDown(0) && operation == true)
+            if (Input.GetMouseButtonDown(0) && operation == true)
             {
                 OnMouseDown();
             }
-            if (notDrag == true && Input.GetMouseButton(0) && operation == true)
+            if (Input.GetMouseButton(0) && operation == true)
             {
                 OnMouseDrag();
             }
-            if (notDrag == true && Input.GetMouseButtonUp(0) && operation == true)
+            if (Input.GetMouseButtonUp(0) && operation == true)
             {
                 OnMouseUp();
             }
@@ -153,7 +152,7 @@ public class PartsMove : MonoBehaviour {
         if (!isClicked){
             return;
         }
-        if (isMove == true)
+        if (notDrag == true && isMove == true)
         {
             Vector3 screenPoint = Camera.main.ScreenToWorldPoint(this.transform.position);
             Vector3 newVecter = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
