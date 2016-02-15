@@ -9,7 +9,7 @@ public class SclloreView : MonoBehaviour {
     [SerializeField]
     private GameObject menu;
     private float tmp_x;
-    private float maxps = 280.0f;
+    private float maxps = 500.0f;
 
 	// Use this for initialization
 	void Start () {
