@@ -5,11 +5,13 @@ public class SclloreView : MonoBehaviour {
     private bool isClicked = false;
     private Vector2 currentPoint;
     [SerializeField]
-    private bool operation = false;
+    private bool operationC = false;
     [SerializeField]
     private GameObject menu;
     private float tmp_x;
-    private float maxps = 500.0f;
+    private float maxps = 2000.0f;
+    private float speed = 100.0f;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -18,15 +20,15 @@ public class SclloreView : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(0) && operation == true)
+        if (Input.GetMouseButtonDown(0) && operationC == true)
         {
             OnMouseDown();
         }
-        if (Input.GetMouseButton(0) && operation == true)
+        if (Input.GetMouseButton(0) && operationC == true)
         {
             OnMouseDrag();
         }
-        if (Input.GetMouseButtonUp(0) && operation == true)
+        if (Input.GetMouseButtonUp(0) && operationC == true)
         {
             OnMouseUp();
         }
@@ -35,6 +37,7 @@ public class SclloreView : MonoBehaviour {
     void OnMouseDown()
     {
         Debug.Log("OnMouseDown");
+        operationC = true;
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(menu.transform.position);
         Vector3 newVecter = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
@@ -65,7 +68,7 @@ public class SclloreView : MonoBehaviour {
         Vector2 tapPoint = new Vector2(newVecter.x, newVecter.y);
         tmp_x = menu.transform.position.x;
         if (tmp_x < maxps){
-            menu.transform.position = new Vector2(menu.transform.position.x + 40 * (tapPoint.x - currentPoint.x), menu.transform.position.y);
+            menu.transform.position = new Vector2(menu.transform.position.x + speed * (tapPoint.x - currentPoint.x), menu.transform.position.y);
         }
         else if (tmp_x >= maxps){
             menu.transform.position = new Vector2(maxps-1, menu.transform.position.y);
@@ -76,5 +79,6 @@ public class SclloreView : MonoBehaviour {
     void OnMouseUp(){
         Debug.Log("OnMouseUp");
         isClicked = false;
+        operationC = false;
     }
 }
