@@ -2,15 +2,16 @@
 using System.Collections;
 
 public class SclloreView : MonoBehaviour {
-    private bool isClicked = false;
+    private bool isClickedC = false;
     private Vector2 currentPoint;
     [SerializeField]
     private bool operationC = false;
     [SerializeField]
     private GameObject menu;
     private float tmp_x;
-    private float maxps = 2000.0f;
-    private float speed = 100.0f;
+    private float maxps = 1000.0f;
+    private float minps = 0.0f;
+    private float speed = 50.0f;
     
 
 	// Use this for initialization
@@ -20,7 +21,7 @@ public class SclloreView : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(0) && operationC == true)
+        if (Input.GetMouseButtonDown(0) && (operationC == true))
         {
             OnMouseDown();
         }
@@ -36,7 +37,7 @@ public class SclloreView : MonoBehaviour {
 
     void OnMouseDown()
     {
-        Debug.Log("OnMouseDown");
+        Debug.Log("OnMouseDownC");
         operationC = true;
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(menu.transform.position);
         Vector3 newVecter = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
@@ -50,15 +51,15 @@ public class SclloreView : MonoBehaviour {
             if (hitObject)
             {
                 currentPoint = new Vector2(tapPoint.x, tapPoint.y);
-                isClicked = true;
+                isClickedC = true;
             }
         }
     }
 
     void OnMouseDrag()
     {
-        Debug.Log("OnMouseDrag");
-        if (!isClicked){
+        Debug.Log("OnMouseDragC");
+        if (!isClickedC){
             return;
         }
 
@@ -67,18 +68,19 @@ public class SclloreView : MonoBehaviour {
 
         Vector2 tapPoint = new Vector2(newVecter.x, newVecter.y);
         tmp_x = menu.transform.position.x;
-        if (tmp_x < maxps){
-            menu.transform.position = new Vector2(menu.transform.position.x + speed * (tapPoint.x - currentPoint.x), menu.transform.position.y);
-        }
-        else if (tmp_x >= maxps){
+        if (tmp_x < maxps || tmp_x > minps){
+            menu.transform.position = new Vector2(menu.transform.position.x + (tapPoint.x - currentPoint.x) * speed, menu.transform.position.y);
+        } else if (tmp_x >= maxps){
             menu.transform.position = new Vector2(maxps-1, menu.transform.position.y);
+        } else if (tmp_x <= minps){
+            menu.transform.position = new Vector2(minps+1, menu.transform.position.y);
         }
         currentPoint = tapPoint;
     }
 
     void OnMouseUp(){
-        Debug.Log("OnMouseUp");
-        isClicked = false;
+        Debug.Log("OnMouseUpC");
+        isClickedC = false;
         operationC = false;
     }
 }

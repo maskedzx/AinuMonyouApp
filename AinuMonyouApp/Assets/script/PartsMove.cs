@@ -6,13 +6,13 @@ public class PartsMove : MonoBehaviour {
     const float ZOOM_SPEED = 200.0f;
     const float ROTA_SPEED = 1.0f;
 
-    private Vector3 position;
+    //private Vector3 position;
     private float scale_x = 0.0f;
     private float scale_y = 0.0f;
-    private float position_x = 0.0f;
-    private float position_y = 0.0f;
+    //private float position_x = 0.0f;
+    //private float position_y = 0.0f;
     private float rotation_z = 0.0f;
-    private float tmp_rotation = 0.0f; 
+    //private float tmp_rotation = 0.0f; 
 
     private bool isDragging = false;
     private bool isDragged = false;
@@ -51,9 +51,9 @@ public class PartsMove : MonoBehaviour {
         Quaternion rotation = transform.localRotation;
         scale_x = scale.x;
         scale_y = scale.y;
-        position = transform.position;
-        position_x = position.x;
-        position_y = position.y;
+        //position = transform.position;
+        //position_x = position.x;
+        //position_y = position.y;
         rotation_z = rotation.z;
 
     }
