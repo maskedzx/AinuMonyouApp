@@ -18,6 +18,19 @@ public class BGColor : MonoBehaviour {
     [SerializeField]
     private float bggreen;
 
+    public float Bgred{
+        set { this.bgred = value;}
+        get { return this.bgred; }
+    }
+    public float Bggreen{
+        set { this.bggreen = value; }
+        get { return this.bggreen; }
+    }
+    public float Bgblue{
+        set { this.bgblue = value; }
+        get { return this.bgblue; }
+    }
+
     void Awake()
     {
         BGRedSlider = GameObject.Find("BGRedSlider");

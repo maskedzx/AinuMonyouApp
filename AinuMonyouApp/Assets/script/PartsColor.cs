@@ -18,6 +18,19 @@ public class PartsColor : MonoBehaviour {
     [SerializeField]
     private float green;
 
+    public float Red{
+        set { this.red = value; }
+        get { return this.red; }
+    }
+    public float Green{
+        set { this.green = value; }
+        get { return this.green; }
+    }
+    public float Blue{
+        set { this.blue = value; }
+        get { return this.blue; }
+    }
+
     void Awake(){
         RedSlider = GameObject.Find("RedSlider");
         rcs = RedSlider.GetComponent<ColorSlider>();
