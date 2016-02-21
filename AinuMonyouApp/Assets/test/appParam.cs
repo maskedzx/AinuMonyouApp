@@ -7,5 +7,5 @@ public class appParam{
     public objectParam[] statusList;
     public Vector3 BackGroundRGB;
     public Vector3 PartsRGB;
-    public string appName;
+    public string designName;
 }

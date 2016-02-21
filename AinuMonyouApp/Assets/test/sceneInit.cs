@@ -9,10 +9,11 @@ public class sceneInit : MonoBehaviour {
 	void Start () {
         param = new appParam();
         param.statusList = new objectParam[objects.Length];
-        param.appName = "JSON Serializer Test";
+        param.designName = "JSON Serializer Test";
 
 
         //param.BackGroundRGB = ここでRGB指定する予定
+        //param.PartsRGB=
 
         for(int i = 0; i < objects.Length; i++)
         {
