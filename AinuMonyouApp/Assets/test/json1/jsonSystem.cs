@@ -23,7 +23,7 @@ public class jsonSystem : MonoBehaviour {
         {
             return null;
         }
-        FileStream file = File.Open(Application.persistentDataPath + "JsonSerializerTest.json", FileMode.Open);
+        FileStream file = File.Open(Application.persistentDataPath + "/JsonSerializerTest.json", FileMode.Open);
 
         if (file.Length == 0)
         {
