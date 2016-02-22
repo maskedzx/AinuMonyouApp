@@ -1,15 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class buttonSystem : MonoBehaviour {
+	public Canvas ui;
+	public Text field;
 
-	public void SaveButton()
+	void Start(){
+		ui.enabled = false;//saveのときにキャンバスを表示させるため
+	}
+	public void SaveButton()//セーブボタン
     {
-        sceneInit obj = GameObject.FindWithTag("GameController").GetComponent<sceneInit>();
-        jsonSystem.Save(obj.param);
+		ui.enabled = true;
     }
 
-    public void LoadButton()
+	public void EnterSaveButton(){//セーブ確定ボタン
+		sceneInit obj = GameObject.FindWithTag("GameController").GetComponent<sceneInit>();
+		if (field.text.Length > 0)
+		{
+			obj.Name = field.text;
+		}
+		jsonSystem.Save(obj.param);
+	}
+
+	public void CancelSaveButton(){//セーブキャンセルボタン
+		ui.enabled = false;
+	}
+
+    public void LoadButton()//ロードボタン
     {
         appParam param = jsonSystem.Load();
         print(param);
