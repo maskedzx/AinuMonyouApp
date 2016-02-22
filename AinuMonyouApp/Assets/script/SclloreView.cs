@@ -9,8 +9,8 @@ public class SclloreView : MonoBehaviour {
     [SerializeField]
     private GameObject menu;
     private float tmp_x;
-    private float maxps = 1000.0f;
-    private float minps = 0.0f;
+    private float maxps = 2000.0f;
+    private float minps = 500.0f;
     private float speed = 50.0f;
     
 
@@ -68,7 +68,7 @@ public class SclloreView : MonoBehaviour {
 
         Vector2 tapPoint = new Vector2(newVecter.x, newVecter.y);
         tmp_x = menu.transform.position.x;
-        if (tmp_x < maxps || tmp_x > minps){
+        if (tmp_x < maxps && tmp_x > minps){
             menu.transform.position = new Vector2(menu.transform.position.x + (tapPoint.x - currentPoint.x) * speed, menu.transform.position.y);
         } else if (tmp_x >= maxps){
             menu.transform.position = new Vector2(maxps-1, menu.transform.position.y);
