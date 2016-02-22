@@ -18,17 +18,13 @@ public class buttonSystem : MonoBehaviour
 
     public void EnterSaveButton()
     {//セーブ確定ボタン
-        SceneInit obj = GameObject.FindWithTag("GameController").GetComponent<SceneInit>();
-        obj.SaveInit();
+        SceneInit sceneInit = GameObject.FindWithTag("GameController").GetComponent<SceneInit>();
+        sceneInit.SaveInit();
         if (_textField.text.Length > 0 || !(string.IsNullOrEmpty(_textField.text)))
         {
-            obj.Name = _textField.text;
+            sceneInit.Name = _textField.text;
         }
-        else
-        {
-            obj.Name = "ainuDesign";
-        }
-        jsonSystem.Save(obj._appParam);
+        jsonSystem.Save(sceneInit._appParam);
     }
 
     public void CancelSaveButton()//セーブキャンセルボタン

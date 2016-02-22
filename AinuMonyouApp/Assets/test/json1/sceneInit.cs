@@ -1,23 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
+using System.Collections.Generic;
 public class SceneInit : MonoBehaviour
 {
 
     public GameObject[] _objects;
     public appParam _appParam;
-    public static objectParam[] _objectParam;
+    public static LinkedList<patternParam> _patternParam = new LinkedList<patternParam>();
 
     public void SaveInit()
     {
-        _appParam = new appParam();
+        _appParam = new appParam(_patternParam.Count);
+        print(_patternParam.Count+"test");
         _appParam.designName = "ainuDesign";
-
-
-        foreach(objectParam op in _objectParam)
-        {
-
+        int i = 0;
+        foreach(patternParam pp in _patternParam)
+        { 
+            _appParam.link[i++] = pp.PatternInfo();
         }
+
         /*DirectoryInfo dir = new DirectoryInfo(Application.persistentDataPath);
         FileInfo[] info = dir.GetFiles("*.json");
         foreach (FileInfo f in info)
@@ -48,7 +50,7 @@ public class SceneInit : MonoBehaviour
 
     public string Name
     {
-        get { return null; }
+        get { return _appParam.designName; }
         set { _appParam.designName = value; }
     }
 }

@@ -12,9 +12,9 @@ public class jsonSystem : MonoBehaviour
 
         BinaryFormatter bf = new BinaryFormatter();
         //print("save:::" + Application.persistentDataPath + "/JsonSerializerTest.json");
-        print("save:::" + Application.persistentDataPath + param.designName);
+        print("save:::" + Application.persistentDataPath + "/" + param.designName + ".json");
         //FileStream file = File.Create(Application.persistentDataPath + "/JsonSerializerTest.json");
-        FileStream file = File.Create(Application.persistentDataPath + param.designName);
+        FileStream file = File.Create(Application.persistentDataPath + "/" + param.designName + ".json");
         bf.Serialize(file, json);
         file.Close();
     }

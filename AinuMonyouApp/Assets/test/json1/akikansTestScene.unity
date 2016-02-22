@@ -929,8 +929,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aee68e248e094348b75d53217e30d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 1271143255}
-  field: {fileID: 1318363616}
+  _canvas: {fileID: 1271143255}
+  _textField: {fileID: 1318363616}
 --- !u!1 &1428466339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,17 +1429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8252cd815c9b9409551bff81ae16ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects: []
-  param:
-    statusList: []
-    BackGroundRGB: {x: 0, y: 0, z: 0}
-    PartsRGB: {x: 0, y: 0, z: 0}
-    designName: 
-  objParam:
-    Number: 0
-    Position: {x: 0, y: 0, z: 0}
-    Scale: {x: 0, y: 0, z: 0}
-    Rotate: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &1823188556
 Transform:
   m_ObjectHideFlags: 0
