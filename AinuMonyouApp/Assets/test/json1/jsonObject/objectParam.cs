@@ -4,7 +4,7 @@ using System;
 
 [Serializable]
 public class objectParam{
-    public int Number;
+    public int PartsNumber;
     public Vector3 Position;
     public Vector3 Scale;
     public Quaternion Rotate;
