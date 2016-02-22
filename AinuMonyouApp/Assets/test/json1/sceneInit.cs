@@ -1,37 +1,54 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
+public class SceneInit : MonoBehaviour
+{
 
-public class sceneInit : MonoBehaviour {
+    public GameObject[] _objects;
+    public appParam _appParam;
+    public static objectParam[] _objectParam;
 
-    public GameObject[] objects;
-    public appParam param;
-	public objectParam objParam;
-	void Start () {
-		string str = "ainuDesign"; 
+    public void SaveInit()
+    {
+        _appParam = new appParam();
+        _appParam.designName = "ainuDesign";
 
-        param = new appParam();
-        param.statusList = new objectParam[objects.Length];
-        param.designName = str;
+
+        foreach(objectParam op in _objectParam)
+        {
+
+        }
+        /*DirectoryInfo dir = new DirectoryInfo(Application.persistentDataPath);
+        FileInfo[] info = dir.GetFiles("*.json");
+        foreach (FileInfo f in info)
+        {
+            print(f.Name);
+        }*/
+        //_appParam.statusList
+
+        //_appParam.statusList = new objectParam[_objects.Length];
+
 
         //param.BackGroundRGB = ここでRGB指定する予定
         //param.PartsRGB=
-
-        for(int i = 0; i < objects.Length; i++)
+        /*
+        for (int i = 0; i < _objects.Length; i++)
         {
-            objParam = new objectParam();
-            objParam.Number = i;
-            objParam.Position = objects[i].transform.localPosition;
-            objParam.Scale = objects[i].transform.localScale;
-            objParam.Rotate = objects[i].transform.localRotation;
+            _objectParam = new objectParam();
+            _objectParam.Number = i;
+            _objectParam.Position = _objects[i].transform.localPosition;
+            _objectParam.Scale = _objects[i].transform.localScale;
+            _objectParam.Rotate = _objects[i].transform.localRotation;
 
-            param.statusList[i] = objParam;
+            _appParam.statusList[i] = _objectParam;
 
-			param.link.AddLast (objParam);
-        }
-	}
+            _appParam.link.AddLast(_objectParam);
+        }*/
+    }
 
-	public string Name{
-		get{return null;}
-		set{param.designName = value; }
-	}
+    public string Name
+    {
+        get { return null; }
+        set { _appParam.designName = value; }
+    }
 }
