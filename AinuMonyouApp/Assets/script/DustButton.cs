@@ -11,19 +11,6 @@ public class DustButton : MonoBehaviour
     [SerializeField]
     private GameObject dustObj;
 
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void ModeDust()
     {
         canvasObj.SetActive(false);

@@ -68,7 +68,7 @@ public class SclloreView : MonoBehaviour {
 
         Vector2 tapPoint = new Vector2(newVecter.x, newVecter.y);
         tmp_x = menu.transform.position.x;
-        if (tmp_x < maxps && tmp_x > minps){
+        if (tmp_x < maxps || tmp_x > minps){
             menu.transform.position = new Vector2(menu.transform.position.x + (tapPoint.x - currentPoint.x) * speed, menu.transform.position.y);
         } else if (tmp_x >= maxps){
             menu.transform.position = new Vector2(maxps-1, menu.transform.position.y);
