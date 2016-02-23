@@ -38,7 +38,7 @@ public class ScrollController : MonoBehaviour {
 	public void LoadAinu(int i){
 		string str = info[i].Name;
 		appParam _appParam = jsonSystem.Load (info [i].Name);
-        print(_appParam.link);
+        print(_appParam.link.Length);
 	}
 
 	public void DeleteEnterButton(){
