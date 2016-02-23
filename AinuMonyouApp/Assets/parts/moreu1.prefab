@@ -13,6 +13,7 @@ GameObject:
   - 58: {fileID: 5847284}
   - 114: {fileID: 11475698}
   - 50: {fileID: 5002446}
+  - 114: {fileID: 11483586}
   m_Layer: 0
   m_Name: moreu1
   m_TagString: Parts
@@ -93,6 +94,23 @@ MonoBehaviour:
   partsSpawner: {fileID: 0}
   modeManegerObj: {fileID: 0}
   isMove: 0
+--- !u!114 &11483586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e3b57505012e14c99161a6091d6746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partsNumber: 0
+  _objectParam:
+    PartsNumber: 0
+    Position: {x: 0, y: 0, z: 0}
+    Scale: {x: 0, y: 0, z: 0}
+    Rotate: {x: 0, y: 0, z: 0, w: 0}
 --- !u!212 &21267290
 SpriteRenderer:
   m_ObjectHideFlags: 1

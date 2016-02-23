@@ -13,6 +13,7 @@ GameObject:
   - 58: {fileID: 5854814}
   - 114: {fileID: 11469452}
   - 50: {fileID: 5063984}
+  - 114: {fileID: 11412534}
   m_Layer: 0
   m_Name: aiushi
   m_TagString: Parts
@@ -63,6 +64,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &11412534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e3b57505012e14c99161a6091d6746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partsNumber: 3
+  _objectParam:
+    PartsNumber: 0
+    Position: {x: 0, y: 0, z: 0}
+    Scale: {x: 0, y: 0, z: 0}
+    Rotate: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &11438980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +172,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Parts
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: partsNumber
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
