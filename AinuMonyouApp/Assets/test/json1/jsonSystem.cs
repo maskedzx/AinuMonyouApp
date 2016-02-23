@@ -19,15 +19,15 @@ public class jsonSystem : MonoBehaviour
         file.Close();
     }
 
-    public static appParam Load()
+	public static appParam Load(string name)
     {
         BinaryFormatter bf = new BinaryFormatter();
         //if (!File.Exists(Application.persistentDataPath + "/JsonSerializerTest.json"))
-        if (!File.Exists(Application.persistentDataPath + "/JsonSerializerTest.json"))
-        {
-            return null;
-        }
-        FileStream file = File.Open(Application.persistentDataPath + "/JsonSerializerTest.json", FileMode.Open);
+		if (!File.Exists (Application.persistentDataPath + "/" + name + ".json")) 
+		{
+			return null;
+		}
+		FileStream file = File.Open (Application.persistentDataPath + "/" + name + ".json", FileMode.Open);
 
         if (file.Length == 0)
         {
