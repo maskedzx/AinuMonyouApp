@@ -7,12 +7,12 @@ using System.Collections;
 
 public class patternParam : MonoBehaviour {
     public int partsNumber;
-    public objectParam _objectParam;
+    private objectParam _objectParam;
 
     void Start()
     {
         _objectParam = new objectParam();
-        SceneInit._patternParam.AddLast(this);
+        sceneInit._patternParam.AddLast(this);
     }
 
     public objectParam PatternInfo()
