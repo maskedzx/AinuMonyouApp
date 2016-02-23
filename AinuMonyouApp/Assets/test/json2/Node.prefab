@@ -326,8 +326,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11439000, guid: e21946986be0145928d55f22821ed7f5, type: 2}
-        m_MethodName: LoadAinu
+      - m_Target: {fileID: 11447640}
+        m_MethodName: LoadButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -539,11 +539,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11439000, guid: e21946986be0145928d55f22821ed7f5,
-        type: 2}
+      objectReference: {fileID: 11447640}
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadAinu
+      value: LoadButton
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

@@ -23,11 +23,11 @@ public class jsonSystem : MonoBehaviour
     {
         BinaryFormatter bf = new BinaryFormatter();
         //if (!File.Exists(Application.persistentDataPath + "/JsonSerializerTest.json"))
-		if (!File.Exists (Application.persistentDataPath + "/" + name + ".json")) 
+		if (!File.Exists (Application.persistentDataPath + "/" + name)) 
 		{
 			return null;
 		}
-		FileStream file = File.Open (Application.persistentDataPath + "/" + name + ".json", FileMode.Open);
+		FileStream file = File.Open (Application.persistentDataPath + "/" + name, FileMode.Open);
 
         if (file.Length == 0)
         {

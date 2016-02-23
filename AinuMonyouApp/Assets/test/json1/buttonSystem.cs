@@ -32,10 +32,4 @@ public class buttonSystem : MonoBehaviour
     {
         _canvas.enabled = false;
     }
-
-    public void LoadButton()//ロードボタン
-    {
-        //appParam param = jsonSystem.Load();
-
-    }
 }
