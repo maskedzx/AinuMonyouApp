@@ -35,14 +35,7 @@ public class buttonSystem : MonoBehaviour
 
     public void LoadButton()//ロードボタン
     {
-        appParam param = jsonSystem.Load();
-        print(param);
+        //appParam param = jsonSystem.Load();
 
-		DirectoryInfo dir = new DirectoryInfo(Application.persistentDataPath);
-		FileInfo[] info = dir.GetFiles("*.json");
-		foreach (FileInfo f in info)
-		{
-			print(f.Name);
-		}
     }
 }
