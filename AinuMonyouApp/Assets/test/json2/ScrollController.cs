@@ -7,6 +7,9 @@ public class ScrollController : MonoBehaviour {
 
 	[SerializeField]
 	RectTransform prefab;
+	private DirectoryInfo dir;
+	private FileInfo[] info;
+
 	void Start () {
 		/*for (int i = 0; i < 15; i++) {
 			var item = GameObject.Instantiate (prefab) as RectTransform;
@@ -16,8 +19,12 @@ public class ScrollController : MonoBehaviour {
 			text.text = "item:" + i.ToString ();
 		}*/
 
-		DirectoryInfo dir = new DirectoryInfo(Application.persistentDataPath);
-		FileInfo[] info = dir.GetFiles("*.json");
+		dir = new DirectoryInfo(Application.persistentDataPath);
+		info = dir.GetFiles("*.json");
+		StartCoroutine ("LoadCoroutine");
+	}
+
+	private IEnumerator LoadCoroutine(){
 		foreach (FileInfo f in info)
 		{
 			RectTransform item = GameObject.Instantiate (prefab) as RectTransform;
@@ -25,7 +32,7 @@ public class ScrollController : MonoBehaviour {
 			print(f.Name);
 			Text titleText = item.GetComponentInChildren<Text> ();
 			titleText.text = f.Name;
+			yield return null;
 		}
-
 	}
 }
