@@ -2,7 +2,7 @@
 using System.Collections;
 using System.IO;
 using System.Collections.Generic;
-public class SceneInit : MonoBehaviour
+public class sceneInit : MonoBehaviour
 {
 
     public GameObject[] _objects;
@@ -13,7 +13,7 @@ public class SceneInit : MonoBehaviour
     {
         _appParam = new appParam(_patternParam.Count);
         print(_patternParam.Count+"test");
-        _appParam.designName = "ainuDesign";
+        _appParam.designName = "nonameDesign";
         int i = 0;
         foreach(patternParam pp in _patternParam)
         { 

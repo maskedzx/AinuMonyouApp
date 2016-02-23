@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.IO;
 
 public class buttonSystem : MonoBehaviour
 {
@@ -18,13 +19,13 @@ public class buttonSystem : MonoBehaviour
 
     public void EnterSaveButton()
     {//セーブ確定ボタン
-        SceneInit sceneInit = GameObject.FindWithTag("GameController").GetComponent<SceneInit>();
-        sceneInit.SaveInit();
+        sceneInit _sceneInit = GameObject.FindWithTag("GameController").GetComponent<sceneInit>();
+        _sceneInit.SaveInit();
         if (_textField.text.Length > 0 || !(string.IsNullOrEmpty(_textField.text)))
         {
-            sceneInit.Name = _textField.text;
+            _sceneInit.Name = _textField.text;
         }
-        jsonSystem.Save(sceneInit._appParam);
+        jsonSystem.Save(_sceneInit._appParam);
     }
 
     public void CancelSaveButton()//セーブキャンセルボタン
@@ -36,5 +37,12 @@ public class buttonSystem : MonoBehaviour
     {
         appParam param = jsonSystem.Load();
         print(param);
+
+		DirectoryInfo dir = new DirectoryInfo(Application.persistentDataPath);
+		FileInfo[] info = dir.GetFiles("*.json");
+		foreach (FileInfo f in info)
+		{
+			print(f.Name);
+		}
     }
 }
