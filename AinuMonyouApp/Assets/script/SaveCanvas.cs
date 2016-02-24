@@ -41,6 +41,15 @@ public class SaveCanvas : MonoBehaviour
     private string path = "";
     private string fileName = "screenshot";
 
+    [SerializeField]
+    private GameObject modeManegerObj;
+    private ModeManegr mm;
+
+    void Awake()
+    {
+        mm = modeManegerObj.GetComponent<ModeManegr>();
+    }
+
 
     // Use this for initialization
     void Start()
@@ -81,6 +90,10 @@ public class SaveCanvas : MonoBehaviour
 
     public void saveButton()
     {
+        fileName = inputfield.text;
+        if (fileName == ""){
+            fileName = "screenshot";
+        }
         screenshot();
     }
 
@@ -127,9 +140,8 @@ public class SaveCanvas : MonoBehaviour
         yesButton.SetActive(false);
         noButton.SetActive(false);
         TextObj2.SetActive(false);
-        saveButtonObj2.SetActive(false);
-        cancelButtonObj2.SetActive(false);
         saveCanvasObj.GetComponent<Canvas>().enabled = false;
+        mm.IsMove = true;
     }
 
     void screenshot()

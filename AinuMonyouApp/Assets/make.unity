@@ -898,6 +898,7 @@ MonoBehaviour:
   notsaveButton: {fileID: 1335585483}
   yesButton: {fileID: 235018257}
   noButton: {fileID: 1446566803}
+  modeManegerObj: {fileID: 1577165495}
 --- !u!114 &230582863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1027,6 +1028,7 @@ MonoBehaviour:
   notsaveButton: {fileID: 1335585483}
   yesButton: {fileID: 235018257}
   noButton: {fileID: 1446566803}
+  modeManegerObj: {fileID: 1577165495}
 --- !u!114 &235018259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3532,6 +3534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasObj: {fileID: 1622027048}
   saveCanvasObj: {fileID: 374768695}
+  modeManegerObj: {fileID: 1577165495}
 --- !u!114 &639140089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5747,6 +5750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasObj: {fileID: 1622027048}
   saveCanvasObj: {fileID: 374768695}
+  modeManegerObj: {fileID: 1577165495}
 --- !u!1 &1335585483
 GameObject:
   m_ObjectHideFlags: 0
@@ -5809,6 +5813,7 @@ MonoBehaviour:
   notsaveButton: {fileID: 1335585483}
   yesButton: {fileID: 235018257}
   noButton: {fileID: 1446566803}
+  modeManegerObj: {fileID: 1577165495}
 --- !u!114 &1335585486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6023,6 +6028,7 @@ MonoBehaviour:
   notsaveButton: {fileID: 1335585483}
   yesButton: {fileID: 235018257}
   noButton: {fileID: 1446566803}
+  modeManegerObj: {fileID: 1577165495}
 --- !u!114 &1376911607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6321,6 +6327,7 @@ MonoBehaviour:
   notsaveButton: {fileID: 1335585483}
   yesButton: {fileID: 235018257}
   noButton: {fileID: 1446566803}
+  modeManegerObj: {fileID: 1577165495}
 --- !u!114 &1446566805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8003,6 +8010,7 @@ MonoBehaviour:
   notsaveButton: {fileID: 1335585483}
   yesButton: {fileID: 235018257}
   noButton: {fileID: 1446566803}
+  modeManegerObj: {fileID: 1577165495}
 --- !u!114 &1817577598
 MonoBehaviour:
   m_ObjectHideFlags: 0

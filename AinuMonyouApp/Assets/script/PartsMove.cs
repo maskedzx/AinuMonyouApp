@@ -4,7 +4,7 @@ using System.Collections;
 public class PartsMove : MonoBehaviour {
     const float ROATTION_SPEED = 5.0f;
     const float ZOOM_SPEED = 200.0f;
-    const float ROTA_SPEED = 1.0f;
+    const float ROTA_SPEED = 3.0f;
 
     //private Vector3 position;
     private float scale_x = 0.0f;
@@ -18,7 +18,8 @@ public class PartsMove : MonoBehaviour {
     private bool isDragged = false;
     private bool isPinched = false;
     private float interval = 0.0f;
-
+    private float pos_y0;
+    private float pos_y1;
     private bool isClicked = false;
     private Vector2 currentPoint;
 
@@ -100,14 +101,24 @@ public class PartsMove : MonoBehaviour {
             }
             else if (Input.touchCount == 2 && operation == true && moveMode == false){
             notDrag = false;
-            if (Input.touches[0].phase == TouchPhase.Began || Input.touches[1].phase == TouchPhase.Began){
-                    interval = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
-                }
 
-            float tmpInterval = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
-            rotation_z -= (tmpInterval - interval) / ROTA_SPEED;
-            interval = tmpInterval;
+            if (Input.touches[0].phase == TouchPhase.Began || Input.touches[1].phase == TouchPhase.Began) {
+                pos_y0 = Input.touches[0].position.y;
+                pos_y1 = Input.touches[1].position.y;
+            }
+            float tmppos_y0 = Input.touches[0].position.y;
+            float tmppos_y1 = Input.touches[1].position.y;
+            if (Input.touches[0].position.x > Input.touches[1].position.x){
+                rotation_z += (tmppos_y0 - pos_y0) / ROTA_SPEED;
+                rotation_z -= (tmppos_y1 - pos_y1) / ROTA_SPEED;
+            } else {
+                rotation_z += (tmppos_y1 - pos_y1) / ROTA_SPEED;
+                rotation_z -= (tmppos_y0 - pos_y0) / ROTA_SPEED;
+            }           
             this.transform.rotation = Quaternion.Euler(0, 0, rotation_z);
+            pos_y0 = tmppos_y0;
+            pos_y1 = tmppos_y1;
+
             isPinched = true;
             }
             else if (isDragging)
