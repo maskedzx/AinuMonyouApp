@@ -46,11 +46,7 @@ MonoBehaviour:
   BackGroundRGB: {x: 0, y: 0, z: 0}
   PartsRGB: {x: 0, y: 0, z: 0}
   designName: ainuDesign
-  _objectParam:
-  - PartsNumber: 0
-    Position: {x: 0, y: 0, z: 0}
-    Scale: {x: 1, y: 1, z: 1}
-    Rotate: {x: 0, y: 0, z: 0, w: 0}
+  _objectParam: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

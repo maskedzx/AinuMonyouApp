@@ -37,7 +37,7 @@ public class PatternRetention : MonoBehaviour {
 	}
 
 	void Start () {
-		DontDestroyOnLoad (this.gameObject);
+		DontDestroyOnLoad (this);
 		flag = false;
 		_moreu1 = moreu1.GetComponent<PartsColor> ();
 		_moreu2 = moreu2.GetComponent<PartsColor> ();
@@ -52,31 +52,30 @@ public class PatternRetention : MonoBehaviour {
 		}
 	}
 
-	/*ublic void InstanceObject(){
-		StartCoroutine ("InstanceObjectCoroutine");
-	}*/
-
 	private IEnumerator InstanceObjectCoroutine(){
 		BGColor bgColor = FindObjectOfType<BGColor> ();
 		if (bgColor != null) {
 			bgColor.Bgred = BackGroundRGB.x;
 			bgColor.Bggreen = BackGroundRGB.y;
 			bgColor.Bgblue = BackGroundRGB.z;
+
+			print ("BGCOLOR:"+bgColor.Bgred+" "+bgColor.Bggreen+" "+bgColor.Bgblue);
 			yield return null;
 		}
 
 
 		if (_objectParam.Length>0) {
-			/*PartsColor partsColor = FindObjectOfType<PartsColor> ();
+			PartsColor[] partsColor = FindObjectsOfType<PartsColor> ();
 			print (partsColor+"::"+PartsRGB);
-			print (partsColor.Red);
-			partsColor.Red = PartsRGB.x;
-			partsColor.Green = PartsRGB.y;
-			partsColor.Blue = PartsRGB.z;*/
+
 
 			yield return null;
-			print (_objectParam.Length+"_objectParam.lengthの数");
+			print (_objectParam.Length + "_objectParam.lengthの数");
 			for (int i = 0; i < _objectParam.Length; i++) {
+				partsColor[i].Red = PartsRGB.x;
+				partsColor[i].Green = PartsRGB.y;
+				partsColor[i].Blue = PartsRGB.z;
+				print ("partsColor:::" + partsColor [i].Red + " " + partsColor [i].Green + " " + partsColor [i].Blue);
 				switch (_objectParam [i].PartsNumber) {
 				case 0:
 					moreu1.transform.localScale = _objectParam [i].Scale;
@@ -117,7 +116,7 @@ public class PatternRetention : MonoBehaviour {
 				yield return null;
 			}
 		}
-		Destroy (this.gameObject);
+		//Destroy (this.gameObject);
 	}
 
 }

@@ -29,7 +29,7 @@ public class ScrollController : MonoBehaviour {
 		{
 			item = GameObject.Instantiate (prefab) as RectTransform;
 			item.SetParent (transform, false);
-			print(f.Name);
+			//print(f.Name);
 			Text titleText = item.GetComponentInChildren<Text> ();
 			titleText.text = f.Name;
 
@@ -44,8 +44,7 @@ public class ScrollController : MonoBehaviour {
 		Instantiate (dontDestroyObject);
 		appParam _appParam = jsonSystem.Load (info [i].Name);
 		print ("アプリ情報:::名前:"+_appParam.designName + " パーツRGB:" + _appParam.PartsRGB + "背景RGB:" + _appParam.BackGroundRGB);
-		PatternRetention pr = dontDestroyObject.GetComponent<PatternRetention> ();
-
+		PatternRetention pr = FindObjectOfType<PatternRetention>();
 
 		pr.designName = _appParam.designName;
 		pr.BackGroundRGB = _appParam.BackGroundRGB;
@@ -55,7 +54,8 @@ public class ScrollController : MonoBehaviour {
 		try{
 			for (int j = 0; j < _appParam.link.Length; j++) {
 				pr._objectParam[j] = _appParam.link [j];
-				print ("パーツ情報:::パーツ番号:"+pr._objectParam[j].PartsNumber + " position:" + pr._objectParam[j].Position + " scale:" + pr._objectParam[j].Scale + " rotate:" + pr._objectParam[j].Rotate);				
+				print ("パーツ情報:::パーツ番号:"+pr._objectParam[j].PartsNumber + " position:" + pr._objectParam[j].Position + " scale:" + pr._objectParam[j].Scale + " rotate:" + pr._objectParam[j].Rotate);	
+
 			}
 		}catch(Exception e){
 			print("オブジェクトがひとつもなかったよ");
