@@ -81,7 +81,6 @@ public class SaveCanvas : MonoBehaviour
 
     public void saveButton()
     {
-        fileName = inputfield.text;
         screenshot();
     }
 
