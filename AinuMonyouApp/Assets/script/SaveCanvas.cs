@@ -173,6 +173,8 @@ public class SaveCanvas : MonoBehaviour
         notsaveButton.SetActive(false);
         noButton.SetActive(true);
         TextObj.SetActive(false);
+        saveButtonObj2.SetActive(false);
+        cancelButtonObj2.SetActive(false);
 
         text.text = "終了しますか？";
         saveCanvasObj.GetComponent<Canvas>().enabled = true;
