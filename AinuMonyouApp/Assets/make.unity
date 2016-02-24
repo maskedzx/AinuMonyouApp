@@ -3779,6 +3779,48 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &828003848
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 410212, guid: 1f365ce396387404b82026217c858ecd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.07762481
+      objectReference: {fileID: 0}
+    - target: {fileID: 410212, guid: 1f365ce396387404b82026217c858ecd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.08827369
+      objectReference: {fileID: 0}
+    - target: {fileID: 410212, guid: 1f365ce396387404b82026217c858ecd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410212, guid: 1f365ce396387404b82026217c858ecd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410212, guid: 1f365ce396387404b82026217c858ecd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410212, guid: 1f365ce396387404b82026217c858ecd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410212, guid: 1f365ce396387404b82026217c858ecd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 410212, guid: 1f365ce396387404b82026217c858ecd, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1f365ce396387404b82026217c858ecd, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &840817357
 GameObject:
   m_ObjectHideFlags: 0
@@ -6986,6 +7028,7 @@ GameObject:
   - 114: {fileID: 1817577595}
   - 114: {fileID: 1817577594}
   - 114: {fileID: 1817577597}
+  - 114: {fileID: 1817577598}
   m_Layer: 5
   m_Name: SaveButton
   m_TagString: Untagged
@@ -7061,6 +7104,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1817577598}
+        m_MethodName: EnterSaveButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1817577595
@@ -7116,6 +7170,18 @@ MonoBehaviour:
   inputfield: {fileID: 267762865}
   inputfieldObj: {fileID: 267762863}
   TextObj: {fileID: 889753139}
+--- !u!114 &1817577598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1817577592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aee68e248e094348b75d53217e30d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textField: {fileID: 532703430}
 --- !u!1 &1829256841
 GameObject:
   m_ObjectHideFlags: 0

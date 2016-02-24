@@ -24,8 +24,8 @@ public class sceneInit : MonoBehaviour
         //_appParam.statusList = new objectParam[_objects.Length];
 
 
-        //param.BackGroundRGB = ここでRGB指定する予定
-        //param.PartsRGB=
+        //_appParam.BackGroundRGB = ここでRGB指定する予定
+        //_appParam.PartsRGB=
     }
 
     public string Name

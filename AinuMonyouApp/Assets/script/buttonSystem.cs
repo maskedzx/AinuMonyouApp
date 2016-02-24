@@ -5,16 +5,16 @@ using System.IO;
 
 public class buttonSystem : MonoBehaviour
 {
-    public Canvas _canvas;
+    //public Canvas _canvas;
     public Text _textField;
 
     void Start()
     {
-        _canvas.enabled = false;//saveのときにキャンバスを表示させるため
+        //_canvas.enabled = false;//saveのときにキャンバスを表示させるため
     }
     public void SaveButton()//セーブボタン
     {
-        _canvas.enabled = true;
+        //_canvas.enabled = true;
     }
 
     public void EnterSaveButton()
@@ -31,6 +31,6 @@ public class buttonSystem : MonoBehaviour
 
     public void CancelSaveButton()//セーブキャンセルボタン
     {
-        _canvas.enabled = false;
+        //_canvas.enabled = false;
     }
 }

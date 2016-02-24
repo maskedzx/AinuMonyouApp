@@ -8,10 +8,10 @@ public class PatternRetention : MonoBehaviour {
 	public GameObject moreu2;
 	public GameObject shiku;
 	public GameObject aiushi;
-	public PartsColor _moreu1;
-	public PartsColor _moreu2;
-	public PartsColor _shiku;
-	public PartsColor _aiushi;
+	private PartsColor _moreu1;
+	private PartsColor _moreu2;
+	private PartsColor _shiku;
+	private PartsColor _aiushi;
 
 	public Vector3 BackGroundRGB;
 	public Vector3 PartsRGB;

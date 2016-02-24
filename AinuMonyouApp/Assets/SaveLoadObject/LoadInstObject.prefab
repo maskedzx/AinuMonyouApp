@@ -48,9 +48,9 @@ MonoBehaviour:
   designName: ainuDesign
   _objectParam:
   - PartsNumber: 0
-    Position: {x: 4.77, y: 3.04, z: 0.42}
-    Scale: {x: 3.3732681, y: 3.2260895, z: 1}
-    Rotate: {x: 0.09862071, y: -0.011949686, z: -0.11934691, w: 0.9878702}
+    Position: {x: 0, y: 0, z: 0}
+    Scale: {x: 1, y: 1, z: 1}
+    Rotate: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -78,6 +78,42 @@ Prefab:
       propertyPath: shiku
       value: 
       objectReference: {fileID: 149296, guid: 31c6e50c549f05c47b26fe218ae07417, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _objectParam.Array.data[0].Position.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _objectParam.Array.data[0].Position.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _objectParam.Array.data[0].Position.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _objectParam.Array.data[0].Scale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _objectParam.Array.data[0].Scale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _objectParam.Array.data[0].Rotate.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _objectParam.Array.data[0].Rotate.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _objectParam.Array.data[0].Rotate.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _objectParam.Array.data[0].Rotate.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 116044}
