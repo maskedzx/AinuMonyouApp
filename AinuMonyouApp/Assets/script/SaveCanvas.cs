@@ -4,6 +4,7 @@ using System.Collections;
 using System.IO;
 using System.Collections.Generic;
 using System.Threading;
+using UnityEngine.SceneManagement;
 using System;
 
 public class SaveCanvas : MonoBehaviour
@@ -26,7 +27,16 @@ public class SaveCanvas : MonoBehaviour
     private GameObject inputfieldObj;
     [SerializeField]
     private GameObject TextObj;
-
+    [SerializeField]
+    private GameObject TextObj2;
+    [SerializeField]
+    private Text text;
+    [SerializeField]
+    private GameObject notsaveButton;
+    [SerializeField]
+    private GameObject yesButton;
+    [SerializeField]
+    private GameObject noButton;
 
     private string path = "";
     private string fileName = "screenshot";
@@ -56,6 +66,7 @@ public class SaveCanvas : MonoBehaviour
         {
             Debug.Log("上書き");
             inputfieldObj.SetActive(false);
+            notsaveButton.SetActive(false);
             TextObj.SetActive(true);
             saveButtonObj1.SetActive(false);
             saveButtonObj2.SetActive(true);
@@ -82,7 +93,44 @@ public class SaveCanvas : MonoBehaviour
         saveButtonObj2.SetActive(false);
         cancelButtonObj1.SetActive(true);
         cancelButtonObj2.SetActive(false);
+        notsaveButton.SetActive(true);
         inputfield.text = "";
+    }
+
+    public void notSaveButton()
+    {
+        inputfieldObj.SetActive(false);
+        TextObj2.SetActive(true);
+        saveButtonObj1.SetActive(false);
+        yesButton.SetActive(true);
+        cancelButtonObj1.SetActive(false);
+        notsaveButton.SetActive(false);
+        noButton.SetActive(true);
+        text.text = "本当に保存せずに 終わりますか？";
+    }
+
+    public void YesButton()
+    {
+        SceneManager.LoadScene("title");
+    }
+
+    public void NoButton()
+    {
+        TextObj.SetActive(false);
+        inputfieldObj.SetActive(true);
+        saveButtonObj1.SetActive(true);
+        saveButtonObj2.SetActive(false);
+        cancelButtonObj1.SetActive(true);
+        cancelButtonObj2.SetActive(false);
+        notsaveButton.SetActive(true);
+        inputfield.text = "";
+        canvasObj.SetActive(true);
+        yesButton.SetActive(false);
+        noButton.SetActive(false);
+        TextObj2.SetActive(false);
+        saveButtonObj2.SetActive(false);
+        cancelButtonObj2.SetActive(false);
+        saveCanvasObj.GetComponent<Canvas>().enabled = false;
     }
 
     void screenshot()
@@ -117,15 +165,19 @@ public class SaveCanvas : MonoBehaviour
 
     void end()
     {
+        inputfieldObj.SetActive(false);
+        TextObj2.SetActive(true);
+        saveButtonObj1.SetActive(false);
+        yesButton.SetActive(true);
+        cancelButtonObj1.SetActive(false);
+        notsaveButton.SetActive(false);
+        noButton.SetActive(true);
         TextObj.SetActive(false);
-        inputfieldObj.SetActive(true);
-        saveButtonObj1.SetActive(true);
         saveButtonObj2.SetActive(false);
-        cancelButtonObj1.SetActive(true);
         cancelButtonObj2.SetActive(false);
-        inputfield.text = "";
-        canvasObj.SetActive(true);
-        saveCanvasObj.GetComponent<Canvas>().enabled = false;
+
+        text.text = "終了しますか？";
+        saveCanvasObj.GetComponent<Canvas>().enabled = true;
     }
 
 

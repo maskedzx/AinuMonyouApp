@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class title : MonoBehaviour {
 
@@ -21,11 +22,11 @@ public class title : MonoBehaviour {
 
     public void makeButton()
     {
-        Application.LoadLevel("make");
+        SceneManager.LoadScene("make");
     }
 
     public void showButton()
     {
-        Application.LoadLevel("show");
+        SceneManager.LoadScene("show");
     }
 }
