@@ -35,4 +35,9 @@ public class BGColorSlider : MonoBehaviour {
     {
         slider.value = tmpLevel;
     }
+    public void LoadColor(float f)
+    {
+        slider.value = f;
+        tmpLevel = f;
+    }
 }

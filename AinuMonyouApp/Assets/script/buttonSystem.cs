@@ -5,17 +5,7 @@ using System.IO;
 
 public class buttonSystem : MonoBehaviour
 {
-    //public Canvas _canvas;
     public Text _textField;
-
-    void Start()
-    {
-        //_canvas.enabled = false;//saveのときにキャンバスを表示させるため
-    }
-    public void SaveButton()//セーブボタン
-    {
-        //_canvas.enabled = true;
-    }
 
     public void EnterSaveButton()
     {//セーブ確定ボタン
@@ -27,10 +17,5 @@ public class buttonSystem : MonoBehaviour
         }
         jsonSystem.Save(_sceneInit._appParam);
 
-    }
-
-    public void CancelSaveButton()//セーブキャンセルボタン
-    {
-        //_canvas.enabled = false;
     }
 }

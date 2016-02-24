@@ -31,5 +31,9 @@ public class ColorSlider : MonoBehaviour {
         slider.value = tmpLevel;
     }
 
-
+    public void LoadParts(float f)
+    {
+        slider.value = f;
+        tmpLevel = f;
+    }
 }

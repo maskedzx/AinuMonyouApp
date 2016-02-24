@@ -11,21 +11,21 @@ public class sceneInit : MonoBehaviour
 
     public void SaveInit()
     {
+		
         _appParam = new appParam(_patternParam.Count);
         print(_patternParam.Count+"test");
+
+		BGColor bgColor = FindObjectOfType<BGColor> ();
+		_appParam.BackGroundRGB = new Vector3 (bgColor.Bgred,bgColor.Bggreen,bgColor.Bgblue);
+		PartsColor part = FindObjectOfType<PartsColor> ();
+		_appParam.PartsRGB = new Vector3(part.Red,part.Green,part.Blue);
+
         _appParam.designName = "nonameDesign";
         int i = 0;
         foreach(patternParam pp in _patternParam)
         { 
             _appParam.link[i++] = pp.PatternInfo();
         }
-        //_appParam.statusList
-
-        //_appParam.statusList = new objectParam[_objects.Length];
-
-
-        //_appParam.BackGroundRGB = ここでRGB指定する予定
-        //_appParam.PartsRGB=
     }
 
     public string Name
