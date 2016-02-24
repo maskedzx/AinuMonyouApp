@@ -75,7 +75,7 @@ public class PatternRetention : MonoBehaviour {
 			partsColor.Blue = PartsRGB.z;*/
 
 			yield return null;
-		
+			print (_objectParam.Length+"_objectParam.lengthの数");
 			for (int i = 0; i < _objectParam.Length; i++) {
 				switch (_objectParam [i].PartsNumber) {
 				case 0:
