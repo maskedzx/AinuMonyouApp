@@ -15,34 +15,41 @@ public class ScrollController : MonoBehaviour {
 	private FileInfo[] info;
 	private RectTransform item;
 	private LoadButtonParam _loadButtonParam;
+    private AsyncOperation op;
 
-	void Start () {
+
+    void Start () {
 		deleteOrEdit = true;
 		dir = new DirectoryInfo(Application.persistentDataPath);
 		info = dir.GetFiles("*.json");
 		StartCoroutine ("LoadCoroutine");
-	}
+
+        op = SceneManager.LoadSceneAsync("title");
+        op.allowSceneActivation = false;
+    }
 
 	private IEnumerator LoadCoroutine(){
 		int i = 0;
 		foreach (FileInfo f in info)
 		{
-			item = GameObject.Instantiate (prefab) as RectTransform;
+			item = Instantiate (prefab) as RectTransform;
 			item.SetParent (transform, false);
-			//print(f.Name);
 			Text titleText = item.GetComponentInChildren<Text> ();
-			titleText.text = f.Name;
+			titleText.text = f.Name.Substring(0, f.Name.Length - 5);
 
 			item.gameObject.GetComponent<LoadButtonParam> ().Number=i++;
 			_loadButtonParam = item.gameObject.GetComponent<LoadButtonParam> ();
+
+
 			yield return null;
 		}
 	}
 
 	public void LoadAinu(int i){
 		string str = info[i].Name;
-		Instantiate (dontDestroyObject);
-		appParam _appParam = jsonSystem.Load (info [i].Name);
+        string st = str.Substring(0, str.Length-5);
+        Instantiate (dontDestroyObject);
+        appParam _appParam = jsonSystem.Load(st);
 		print ("アプリ情報:::名前:"+_appParam.designName + " パーツRGB:" + _appParam.PartsRGB + "背景RGB:" + _appParam.BackGroundRGB);
 		PatternRetention pr = FindObjectOfType<PatternRetention>();
 
@@ -74,4 +81,9 @@ public class ScrollController : MonoBehaviour {
 		}
 		deleteOrEdit = !deleteOrEdit;
 	}
+
+    public void BackSceneButton()
+    {
+        op.allowSceneActivation = true;
+    }
 }

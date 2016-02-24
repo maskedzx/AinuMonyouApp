@@ -19,7 +19,6 @@ public class PatternRetention : MonoBehaviour
     public string designName;
     public objectParam[] _objectParam;
 
-    private appParam _appParam;
     private static PatternRetention mInstar;
 
     private bool flag = false;
@@ -95,39 +94,22 @@ public class PatternRetention : MonoBehaviour
             print(_objectParam.Length + "_objectParam.lengthの数");
             for (int i = 0; i < _objectParam.Length; i++)
             {
-                
-                //partsColor[i].Red = PartsRGB.x;
-                //partsColor[i].Green = PartsRGB.y;
-                //partsColor[i].Blue = PartsRGB.z;
-                //print ("partsColor:::" + partsColor [i].Red + " " + partsColor [i].Green + " " + partsColor [i].Blue);
                 switch (_objectParam[i].PartsNumber)
                 {
                     case 0:
                         moreu1.transform.localScale = _objectParam[i].Scale;
-                        //_moreu1.Red = PartsRGB.x;
-                       // _moreu1.Green = PartsRGB.y;
-                       // _moreu1.Blue = PartsRGB.z;
                         Instantiate(moreu1, _objectParam[i].Position, _objectParam[i].Rotate);
                         break;
                     case 1:
                         moreu2.transform.localScale = _objectParam[i].Scale;
-                        _moreu2.Red = PartsRGB.x;
-                        _moreu2.Green = PartsRGB.y;
-                        _moreu2.Blue = PartsRGB.z;
                         Instantiate(moreu2, _objectParam[i].Position, _objectParam[i].Rotate);
                         break;
                     case 2:
                         shiku.transform.localScale = _objectParam[i].Scale;
-                        _shiku.Red = PartsRGB.x;
-                        _shiku.Green = PartsRGB.y;
-                        _shiku.Blue = PartsRGB.z;
                         Instantiate(shiku, _objectParam[i].Position, _objectParam[i].Rotate);
                         break;
                     case 3:
                         aiushi.transform.localScale = _objectParam[i].Scale;
-                        _aiushi.Red = PartsRGB.x;
-                        _aiushi.Green = PartsRGB.y;
-                        _aiushi.Blue = PartsRGB.z;
                         Instantiate(aiushi, _objectParam[i].Position, _objectParam[i].Rotate);
                         break;
                     default:

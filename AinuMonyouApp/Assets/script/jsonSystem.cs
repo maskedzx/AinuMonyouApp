@@ -11,9 +11,7 @@ public class jsonSystem : MonoBehaviour
         string json = JsonUtility.ToJson(param);
 
         BinaryFormatter bf = new BinaryFormatter();
-        //print("save:::" + Application.persistentDataPath + "/JsonSerializerTest.json");
         print("save:::" + Application.persistentDataPath + "/" + param.designName + ".json");
-        //FileStream file = File.Create(Application.persistentDataPath + "/JsonSerializerTest.json");
         FileStream file = File.Create(Application.persistentDataPath + "/" + param.designName + ".json");
         bf.Serialize(file, json);
         file.Close();
@@ -21,12 +19,13 @@ public class jsonSystem : MonoBehaviour
 
 	public static appParam Load(string name)
     {
+        print("じぇいそんねーむ" + name);
         BinaryFormatter bf = new BinaryFormatter();
-		if (!File.Exists (Application.persistentDataPath + "/" + name)) 
+		if (!File.Exists (Application.persistentDataPath + "/" + name+".json")) 
 		{
 			return null;
 		}
-		FileStream file = File.Open (Application.persistentDataPath + "/" + name, FileMode.Open);
+		FileStream file = File.Open (Application.persistentDataPath + "/" + name+".json", FileMode.Open);
 
         if (file.Length == 0)
         {

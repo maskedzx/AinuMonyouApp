@@ -45,7 +45,7 @@ MonoBehaviour:
   aiushi: {fileID: 159898, guid: 528974a7798b81b41b59b34321a8b9de, type: 2}
   BackGroundRGB: {x: 0, y: 0, z: 0}
   PartsRGB: {x: 0, y: 0, z: 0}
-  designName: ainuDesign
+  designName: nonameDesign
   _objectParam: []
 --- !u!1001 &100100000
 Prefab:
@@ -109,6 +109,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: _objectParam.Array.data[0].Rotate.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: designName
+      value: nonameDesign
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

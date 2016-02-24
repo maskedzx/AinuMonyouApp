@@ -76,9 +76,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RedSlider: {fileID: 0}
-  red: 0
-  blue: 0
-  green: 0
+  red: 186
+  blue: 43
+  green: 134
 --- !u!114 &11482902
 MonoBehaviour:
   m_ObjectHideFlags: 1

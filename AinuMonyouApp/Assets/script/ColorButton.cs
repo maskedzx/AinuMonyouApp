@@ -14,17 +14,6 @@ public class ColorButton : MonoBehaviour {
         mm = modeManegerObj.GetComponent<ModeManegr>();
     }
 
-
-    // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public void ModePartsColor(){
         mm.IsMove = false;
         canvasObj.SetActive(false);

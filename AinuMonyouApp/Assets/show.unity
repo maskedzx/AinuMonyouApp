@@ -300,6 +300,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11421094, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 22468934, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -380,6 +384,32 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 1038.4
       objectReference: {fileID: 0}
+    - target: {fileID: 11421094, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421094, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421094, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1875449839}
+    - target: {fileID: 11421094, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackSceneButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421094, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1875449839 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11428636, guid: 7fde00039a581472f9a00fd3cfa80c3b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1800766091}
+  m_Script: {fileID: 11500000, guid: 00b168e5db62b4a65a95d02f746d6713, type: 3}

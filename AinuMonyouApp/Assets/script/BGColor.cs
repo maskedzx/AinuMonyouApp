@@ -42,14 +42,6 @@ public class BGColor : MonoBehaviour {
         sp = GetComponent<SpriteRenderer>();
     }
 
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         bgred = bgrcs.Level;
