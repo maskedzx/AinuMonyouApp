@@ -9,6 +9,7 @@ public class ScrollController : MonoBehaviour
 {
     public Image deleteButton;
     public GameObject dontDestroyObject;
+    public GameObject DeleteCheckUI;
 
     private bool deleteOrEdit;
     [SerializeField]
@@ -18,6 +19,8 @@ public class ScrollController : MonoBehaviour
     private RectTransform item;
     private LoadButtonParam _loadButtonParam;
     private AsyncOperation op;
+
+    
 
 
     void Start()
@@ -29,6 +32,9 @@ public class ScrollController : MonoBehaviour
 
         op = SceneManager.LoadSceneAsync("title");
         op.allowSceneActivation = false;
+
+        DeleteCheckUI.SetActive(false);
+
     }
 
     private IEnumerator LoadCoroutine()
@@ -114,12 +120,13 @@ public class ScrollController : MonoBehaviour
     {
         if (deleteOrEdit)
         {
-            deleteButton.color = new Color(0, 96, 96);
-
+            //deleteButton.color = new Color(0, 96, 96);
+            
         }
         else {
-            deleteButton.color = new Color(255f / 255f, 96f / 255f, 96f / 255f);
+           // deleteButton.color = new Color(255f / 255f, 96f / 255f, 96f / 255f);
         }
+        DeleteCheckUI.SetActive(true);
         deleteOrEdit = !deleteOrEdit;
     }
 
@@ -127,4 +134,11 @@ public class ScrollController : MonoBehaviour
     {
         op.allowSceneActivation = true;
     }
+
+    public void CancelButton()
+    {
+        DeleteCheckUI.SetActive(false);
+    }
+
+
 }
