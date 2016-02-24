@@ -520,6 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deleteButton: {fileID: 535573063}
+  dontDestroyObject: {fileID: 116044, guid: ee87e6d322b9847cca2f6ce8595789c5, type: 2}
   prefab: {fileID: 22459220, guid: 82b931589e60f4f53a0f9da83379277b, type: 2}
 --- !u!1 &786601457
 GameObject:

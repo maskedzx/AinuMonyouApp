@@ -22,7 +22,6 @@ public class jsonSystem : MonoBehaviour
 	public static appParam Load(string name)
     {
         BinaryFormatter bf = new BinaryFormatter();
-        //if (!File.Exists(Application.persistentDataPath + "/JsonSerializerTest.json"))
 		if (!File.Exists (Application.persistentDataPath + "/" + name)) 
 		{
 			return null;

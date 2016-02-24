@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &116044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 438536}
+  - 114: {fileID: 11405666}
+  m_Layer: 0
+  m_Name: LoadInstObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &438536
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1254507, y: 3.1829236, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11405666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcad7eb5d0a5144fea071ca2581458e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moreu1: {fileID: 147928, guid: a263d3f3978829f458f561902f1af9af, type: 2}
+  moreu2: {fileID: 105386, guid: 854907149c8334e4daa39ec79a80d85e, type: 2}
+  shiku: {fileID: 149296, guid: 31c6e50c549f05c47b26fe218ae07417, type: 2}
+  aiushi: {fileID: 159898, guid: 528974a7798b81b41b59b34321a8b9de, type: 2}
+  BackGroundRGB: {x: 0, y: 0, z: 0}
+  PartsRGB: {x: 0, y: 0, z: 0}
+  designName: ainuDesign
+  _objectParam:
+  - PartsNumber: 0
+    Position: {x: 4.77, y: 3.04, z: 0.42}
+    Scale: {x: 3.3732681, y: 3.2260895, z: 1}
+    Rotate: {x: 0.09862071, y: -0.011949686, z: -0.11934691, w: 0.9878702}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: areu1
+      value: 
+      objectReference: {fileID: 147928, guid: a263d3f3978829f458f561902f1af9af, type: 2}
+    - target: {fileID: 0}
+      propertyPath: moreu1
+      value: 
+      objectReference: {fileID: 147928, guid: a263d3f3978829f458f561902f1af9af, type: 2}
+    - target: {fileID: 0}
+      propertyPath: moreu2
+      value: 
+      objectReference: {fileID: 105386, guid: 854907149c8334e4daa39ec79a80d85e, type: 2}
+    - target: {fileID: 0}
+      propertyPath: aiushi
+      value: 
+      objectReference: {fileID: 159898, guid: 528974a7798b81b41b59b34321a8b9de, type: 2}
+    - target: {fileID: 0}
+      propertyPath: shiku
+      value: 
+      objectReference: {fileID: 149296, guid: 31c6e50c549f05c47b26fe218ae07417, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 116044}
+  m_IsPrefabParent: 1
