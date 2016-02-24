@@ -19,7 +19,6 @@ public class jsonSystem : MonoBehaviour
 
 	public static appParam Load(string name)
     {
-        print("じぇいそんねーむ" + name);
         BinaryFormatter bf = new BinaryFormatter();
 		if (!File.Exists (Application.persistentDataPath + "/" + name+".json")) 
 		{

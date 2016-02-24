@@ -84,9 +84,10 @@ public class PatternRetention : MonoBehaviour
         if (_objectParam.Length > 0)
         {
             ColorSlider partsRed = GameObject.Find("RedSlider").GetComponent<ColorSlider>();
-            ColorSlider partsGreen = GameObject.Find("RedSlider").GetComponent<ColorSlider>();
-            ColorSlider partsBlue = GameObject.Find("RedSlider").GetComponent<ColorSlider>();
+            ColorSlider partsGreen = GameObject.Find("GreenSlider").GetComponent<ColorSlider>();
+            ColorSlider partsBlue = GameObject.Find("BlueSlider").GetComponent<ColorSlider>();
             partsRed.LoadParts(PartsRGB.x);
+            print(PartsRGB);
             partsGreen.LoadParts(PartsRGB.y);
             partsBlue.LoadParts(PartsRGB.z);
             print(partsRed);
