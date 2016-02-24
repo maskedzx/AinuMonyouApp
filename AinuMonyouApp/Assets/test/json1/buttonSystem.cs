@@ -26,16 +26,11 @@ public class buttonSystem : MonoBehaviour
             _sceneInit.Name = _textField.text;
         }
         jsonSystem.Save(_sceneInit._appParam);
+
     }
 
     public void CancelSaveButton()//セーブキャンセルボタン
     {
         _canvas.enabled = false;
-    }
-
-    public void LoadButton()//ロードボタン
-    {
-        //appParam param = jsonSystem.Load();
-
     }
 }
