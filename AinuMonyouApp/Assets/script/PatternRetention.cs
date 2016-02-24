@@ -23,6 +23,13 @@ public class PatternRetention : MonoBehaviour {
 
 	private bool flag = false;
 
+	private GameObject BGRedSlider;
+	private GameObject BGGreenSlider;
+	private GameObject BGBlueSlider;
+	private BGColorSlider bgrcs;
+	private BGColorSlider bggcs;
+	private BGColorSlider bgbcs;
+
 	private PatternRetention(){
 		print ("Create singleton gameobject instance");
 	}
@@ -45,7 +52,7 @@ public class PatternRetention : MonoBehaviour {
 		_aiushi = shiku.GetComponent<PartsColor> ();
 	}
 	void Update(){
-		if (Application.loadedLevelName=="make" && !flag) {
+		if (!flag && Application.loadedLevelName == "make" ) {
 			flag = true;
 			StartCoroutine ("InstanceObjectCoroutine");
 			print ("シーンがmakeに切り替わった");
@@ -53,16 +60,24 @@ public class PatternRetention : MonoBehaviour {
 	}
 
 	private IEnumerator InstanceObjectCoroutine(){
-		BGColor bgColor = FindObjectOfType<BGColor> ();
-		if (bgColor != null) {
-			bgColor.Bgred = BackGroundRGB.x;
-			bgColor.Bggreen = BackGroundRGB.y;
-			bgColor.Bgblue = BackGroundRGB.z;
+		BGRedSlider = GameObject.Find("BGRedSlider");
+		bgrcs = BGRedSlider.GetComponent<BGColorSlider>();
+		BGGreenSlider = GameObject.Find("BGGreenSlider");
+		bggcs = BGGreenSlider.GetComponent<BGColorSlider>();
+		BGBlueSlider = GameObject.Find("BGBlueSlider");
+		bgbcs = BGBlueSlider.GetComponent<BGColorSlider>();
 
-			print ("BGCOLOR:"+bgColor.Bgred+" "+bgColor.Bggreen+" "+bgColor.Bgblue);
-			yield return null;
-		}
+		//bgrcs.Level = BackGroundRGB.x;
+		bgrcs.Level = 255f;
+		bggcs.Level = BackGroundRGB.y;
+		bgbcs.Level = BackGroundRGB.z;
+			//bgColor.Bgred = BackGroundRGB.x;
+			//bgColor.Bggreen = BackGroundRGB.y;
+			//bgColor.Bgblue = BackGroundRGB.z;
+			//bgColor.setBgAll(BackGroundRGB.x,BackGroundRGB.y,BackGroundRGB.z);
+			//print ("BGCOLOR:"+bgColor.Bgred+" "+bgColor.Bggreen+" "+bgColor.Bgblue);
 
+		yield return null;
 
 		if (_objectParam.Length>0) {
 			PartsColor[] partsColor = FindObjectsOfType<PartsColor> ();
@@ -72,10 +87,11 @@ public class PatternRetention : MonoBehaviour {
 			yield return null;
 			print (_objectParam.Length + "_objectParam.lengthの数");
 			for (int i = 0; i < _objectParam.Length; i++) {
-				partsColor[i].Red = PartsRGB.x;
-				partsColor[i].Green = PartsRGB.y;
-				partsColor[i].Blue = PartsRGB.z;
-				print ("partsColor:::" + partsColor [i].Red + " " + partsColor [i].Green + " " + partsColor [i].Blue);
+				print (partsColor.Length);
+				//partsColor[i].Red = PartsRGB.x;
+				//partsColor[i].Green = PartsRGB.y;
+				//partsColor[i].Blue = PartsRGB.z;
+				//print ("partsColor:::" + partsColor [i].Red + " " + partsColor [i].Green + " " + partsColor [i].Blue);
 				switch (_objectParam [i].PartsNumber) {
 				case 0:
 					moreu1.transform.localScale = _objectParam [i].Scale;
@@ -116,7 +132,7 @@ public class PatternRetention : MonoBehaviour {
 				yield return null;
 			}
 		}
-		//Destroy (this.gameObject);
+		Destroy (this.gameObject);
 	}
 
 }
