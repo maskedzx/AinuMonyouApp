@@ -22,6 +22,7 @@ public class ScrollController : MonoBehaviour
 
     private string ImagePath;
 
+
     void Start()
     {
         deleteOrEdit = true;
@@ -179,4 +180,6 @@ public class ScrollController : MonoBehaviour
 		}
 		op.allowSceneActivation = true;
 	}
+
+    
 }
