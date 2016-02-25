@@ -138,7 +138,31 @@ public class ScrollController : MonoBehaviour
     public void CancelButton()
     {
         DeleteCheckUI.SetActive(false);
+
     }
 
-
+	public void EnterDelete(){
+		GameObject[] dlt = GameObject.FindGameObjectsWithTag ("Node");
+		int i = 0;
+		foreach (GameObject g in dlt) {
+			if (!g.GetComponentInChildren<Toggle> ().isOn) {
+				print ("コンティニュー");
+				i++;
+				continue;
+			} 
+			else 
+			{
+				print ("デリート:::" + info [i]);
+				//File.Delete (info [dlt.Length].Name);
+				if (info[i].Exists){
+					if ((info [i].Attributes&FileAttributes.ReadOnly) == FileAttributes.ReadOnly) {
+						info [i].Attributes = FileAttributes.Normal;
+					}
+					info [i].Delete ();
+				}
+			}
+			i++;
+		}
+		op.allowSceneActivation = true;
+	}
 }
