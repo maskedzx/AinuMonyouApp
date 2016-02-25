@@ -17,6 +17,10 @@ public class patternParam : MonoBehaviour {
 
     public objectParam PatternInfo()
     {
+		if (_objectParam == null) {
+			_objectParam = new objectParam ();
+			sceneInit._patternParam.AddLast (this);
+		}
         _objectParam.PartsNumber = this.partsNumber;
 		_objectParam.Position = this.gameObject.transform.localPosition;
         _objectParam.Scale = this.gameObject.transform.localScale;
