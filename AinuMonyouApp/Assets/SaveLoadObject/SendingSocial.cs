@@ -34,10 +34,6 @@ public class SendingSocial : MonoBehaviour
             
             //folderPath = Application.persistentDataPath + "/" + titleText.text + ".png";
             ImagePath = Application.persistentDataPath + "/" + info[Number].Name.Substring(0, info[Number].Name.Length - 5);
-		}else if(Application.platform==RuntimePlatform.OSXEditor){
-			ImagePath = Application.dataPath + "/" + info[Number].Name.Substring(0, info[Number].Name.Length - 5);
-			print("persistent"+Application.dataPath+"/"+ info[Number].Name.Substring(0, info[Number].Name.Length - 5));
-
 		}
         else
         {

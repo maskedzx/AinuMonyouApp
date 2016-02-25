@@ -20,9 +20,6 @@ public class ScrollController : MonoBehaviour
     private LoadButtonParam _loadButtonParam;
     private AsyncOperation op;
 
-    
-
-
     void Start()
     {
         deleteOrEdit = true;
@@ -60,7 +57,10 @@ public class ScrollController : MonoBehaviour
                 {
                     folderPath = Application.persistentDataPath + "/" + titleText.text + ".png";
                 }
-                else
+				else if(Application.platform == RuntimePlatform.OSXEditor)
+				{
+					folderPath = Application.dataPath + "/../" + titleText.text + ".png";
+				}else
                 {
                     folderPath = Application.dataPath + "/../" + titleText.text + ".png";
                 }
