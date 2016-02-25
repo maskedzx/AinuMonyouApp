@@ -29,12 +29,16 @@ public class SendingSocial : MonoBehaviour
     {
         print("ツイッターボタン");
         print(ImagePath);
-        if (Application.platform != RuntimePlatform.WindowsEditor)
+		if (Application.platform != RuntimePlatform.WindowsEditor)
         {
             
             //folderPath = Application.persistentDataPath + "/" + titleText.text + ".png";
             ImagePath = Application.persistentDataPath + "/" + info[Number].Name.Substring(0, info[Number].Name.Length - 5);
-        }
+		}else if(Application.platform==RuntimePlatform.OSXEditor){
+			ImagePath = Application.dataPath + "/" + info[Number].Name.Substring(0, info[Number].Name.Length - 5);
+			print("persistent"+Application.dataPath+"/"+ info[Number].Name.Substring(0, info[Number].Name.Length - 5));
+
+		}
         else
         {
             ImagePath = Application.dataPath + "/" + info[Number].Name.Substring(0, info[Number].Name.Length - 5);

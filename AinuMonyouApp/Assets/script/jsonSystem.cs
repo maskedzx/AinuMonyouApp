@@ -12,9 +12,17 @@ public class jsonSystem : MonoBehaviour
 
         BinaryFormatter bf = new BinaryFormatter();
         print("save:::" + Application.persistentDataPath + "/" + param.designName + ".json");
-        FileStream file = File.Create(Application.persistentDataPath + "/" + param.designName + ".json");
-        bf.Serialize(file, json);
-        file.Close();
+		if (File.Exists( Application.persistentDataPath + "/" + param.designName + ".json")) {
+			FileStream file = File.Create (Application.persistentDataPath + "/" + param.designName + ".json");
+			bf.Serialize(file, json);
+			file.Close();
+		} else {
+			//FileStream overFile = File.Open (Application.persistentDataPath + "/" + param.designName + ".json");
+			//FileStream overFile = File.Open
+			//bf.Serialize (overFile, json);
+			//overFile.Close();
+		}
+        
     }
 
 	public static appParam Load(string name)

@@ -344,6 +344,50 @@ Prefab:
       propertyPath: DeleteCheckUI
       value: 
       objectReference: {fileID: 1466460776}
+    - target: {fileID: 11422960, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422960, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422960, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499434, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408900, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 1038
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408900, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408900, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 686
+      objectReference: {fileID: 0}
+    - target: {fileID: 22417792, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22417792, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 686
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463550, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 22466044, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -220
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
   m_IsPrefabParent: 0
