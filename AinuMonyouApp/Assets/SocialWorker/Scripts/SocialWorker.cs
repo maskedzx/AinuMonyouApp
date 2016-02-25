@@ -13,6 +13,21 @@ namespace SWorker
     /// </summary>
     public class SocialWorker : MonoBehaviour
 	{
+		private static SocialWorker socialInstance;
+
+		private SocialWorker(){
+			print ("Create SocialSingleton instance");
+		}
+
+		public static SocialWorker SocialSingleton{
+			get{
+				if(socialInstance==null){
+					GameObject go = new GameObject ("SocialWorker");
+					socialInstance = go.AddComponent<SocialWorker> ();
+				}
+				return socialInstance;
+			}
+		}
         /// <summary>
         /// ネイティブプラグイン定義
         /// </summary>
@@ -41,7 +56,7 @@ namespace SWorker
         /// </summary>
         void Awake()
         {
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
 #if !UNITY_EDITOR && UNITY_ANDROID
             worker = new AndroidJavaObject("com.yedo.socialworker.SocialWorker");
 #endif
