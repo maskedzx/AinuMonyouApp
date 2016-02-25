@@ -12,20 +12,24 @@ public class patternParam : MonoBehaviour {
     void Start()
     {
         _objectParam = new objectParam();
+
         sceneInit._patternParam.AddLast(this);
     }
 
     public objectParam PatternInfo()
     {
-		if (_objectParam == null) {
-			_objectParam = new objectParam ();
-			sceneInit._patternParam.AddLast (this);
-		}
+		try{
         _objectParam.PartsNumber = this.partsNumber;
+
+			print("なぜか塗る"+this.gameObject.transform.localPosition);
 		_objectParam.Position = this.gameObject.transform.localPosition;
+			print(_objectParam.Position);
         _objectParam.Scale = this.gameObject.transform.localScale;
         _objectParam.Rotate = this.gameObject.transform.localRotation;
-
+		}catch (MissingReferenceException e){
+			print (e.Message);
+			Debug.LogError (e.Message);
+		}
         return _objectParam;
     }
 }
