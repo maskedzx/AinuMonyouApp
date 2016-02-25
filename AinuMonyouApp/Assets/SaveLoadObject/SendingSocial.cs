@@ -17,7 +17,7 @@ public class SendingSocial : MonoBehaviour
 
         dir = new DirectoryInfo(Application.persistentDataPath);
         info = dir.GetFiles("*.json");
-        Message = "アイヌ文様つくったよ！";
+        Message = "アイヌ文様つくったよ！ #AinuMonyouDesign";
         URL = "";
 
         this.Number = Parent.GetComponent<LoadButtonParam>().Number;
@@ -25,9 +25,9 @@ public class SendingSocial : MonoBehaviour
         
     }
 
-    public void TwitterButton()
+    public void SnsButton()
     {
-        print("ツイッターボタン");
+        print("共有ボタン");
         print(ImagePath);
 		if (Application.platform != RuntimePlatform.WindowsEditor)
         {
@@ -44,6 +44,6 @@ public class SendingSocial : MonoBehaviour
             ImagePath = Application.dataPath + "/" + info[Number].Name.Substring(0, info[Number].Name.Length - 5);
             print("persistent"+Application.dataPath+"/"+ info[Number].Name.Substring(0, info[Number].Name.Length - 5));
         }
-        SWorker.SocialWorker.PostTwitter(Message, URL, ImagePath + ".png");
+        SWorker.SocialWorker.CreateChooser(Message,ImagePath + ".png");
     }
 }
