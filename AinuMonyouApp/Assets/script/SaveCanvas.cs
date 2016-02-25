@@ -37,6 +37,8 @@ public class SaveCanvas : MonoBehaviour
     private GameObject yesButton;
     [SerializeField]
     private GameObject noButton;
+	[SerializeField]
+	private buttonSystem bs;
 
     private string path = "";
     private string fileName = "screenshot";
@@ -71,7 +73,7 @@ public class SaveCanvas : MonoBehaviour
             fileName = "screenshot";
         }
 
-        if (System.IO.File.Exists(Application.persistentDataPath + "/" + fileName + ".png"))
+        if (System.IO.File.Exists(Application.persistentDataPath + "/" + fileName + ".json"))
         {
             Debug.Log("上書き");
             inputfieldObj.SetActive(false);
@@ -166,8 +168,8 @@ public class SaveCanvas : MonoBehaviour
                 path = "/" + fileName + ".png";
                 break;
         }
-        **/
-
+        */
+		bs.SaveButton ();
         Debug.Log("path:" + path);
         //saveCanvasObj.GetComponent<Canvas>().enabled = true;
         //text.text = path;

@@ -13,7 +13,7 @@ public class jsonSystem : MonoBehaviour
         BinaryFormatter bf = new BinaryFormatter();
         print("save:::" + Application.persistentDataPath + "/" + param.designName + ".json");
 
-		FileStream file = File.Open (Application.persistentDataPath + "/" + param.designName + ".json",FileMode.Open);
+		FileStream file = File.Open (Application.persistentDataPath + "/" + param.designName + ".json",FileMode.OpenOrCreate);
 		bf.Serialize(file, json);
 		file.Close();
 		/*if (File.Exists( Application.persistentDataPath + "/" + param.designName + ".json")) {
