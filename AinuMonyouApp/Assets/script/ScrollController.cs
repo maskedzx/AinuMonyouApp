@@ -20,6 +20,8 @@ public class ScrollController : MonoBehaviour
     private LoadButtonParam _loadButtonParam;
     private AsyncOperation op;
 
+    private string ImagePath;
+
     void Start()
     {
         deleteOrEdit = true;
@@ -158,7 +160,19 @@ public class ScrollController : MonoBehaviour
 					if ((info [i].Attributes&FileAttributes.ReadOnly) == FileAttributes.ReadOnly) {
 						info [i].Attributes = FileAttributes.Normal;
 					}
-					info [i].Delete ();
+                    if (Application.platform != RuntimePlatform.WindowsEditor)
+                    {
+
+                        //folderPath = Application.persistentDataPath + "/" + titleText.text + ".png";
+                        ImagePath = Application.persistentDataPath + "/" + info[i].Name.Substring(0, info[i].Name.Length - 5);
+                    }
+                    else
+                    {
+                        ImagePath = Application.dataPath + "/" + info[i].Name.Substring(0, info[i].Name.Length - 5);
+                        print("persistent" + Application.dataPath + "/" + info[i].Name.Substring(0, info[i].Name.Length - 5));
+                    }
+                    File.Delete(ImagePath + ".png");
+                    info [i].Delete ();
 				}
 			}
 			i++;
