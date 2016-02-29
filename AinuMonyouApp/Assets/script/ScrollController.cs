@@ -12,8 +12,8 @@ public class ScrollController : MonoBehaviour
     public GameObject DeleteCheckUI;
 
     private bool deleteOrEdit;
-    [SerializeField]
-    RectTransform prefab;
+    
+    public RectTransform prefab;
     private DirectoryInfo dir;
     private FileInfo[] info;
     private RectTransform item;
@@ -121,14 +121,6 @@ public class ScrollController : MonoBehaviour
 
     public void DeleteEnterButton()
     {
-        if (deleteOrEdit)
-        {
-            //deleteButton.color = new Color(0, 96, 96);
-            
-        }
-        else {
-           // deleteButton.color = new Color(255f / 255f, 96f / 255f, 96f / 255f);
-        }
         DeleteCheckUI.SetActive(true);
         deleteOrEdit = !deleteOrEdit;
     }
@@ -144,27 +136,29 @@ public class ScrollController : MonoBehaviour
 
     }
 
-	public void EnterDelete(){
-		GameObject[] dlt = GameObject.FindGameObjectsWithTag ("Node");
-		int i = 0;
-		foreach (GameObject g in dlt) {
-			if (!g.GetComponentInChildren<Toggle> ().isOn) {
-				print ("コンティニュー");
-				i++;
-				continue;
-			} 
-			else 
-			{
-				print ("デリート:::" + info [i]);
-				//File.Delete (info [dlt.Length].Name);
-				if (info[i].Exists){
-					if ((info [i].Attributes&FileAttributes.ReadOnly) == FileAttributes.ReadOnly) {
-						info [i].Attributes = FileAttributes.Normal;
-					}
+    public void EnterDelete()
+    {
+        GameObject[] dlt = GameObject.FindGameObjectsWithTag("Node");
+        int i = 0;
+        foreach (GameObject g in dlt)
+        {
+            if (!g.GetComponentInChildren<Toggle>().isOn)
+            {
+                print("コンティニュー");
+                i++;
+                continue;
+            }
+            else
+            {
+                print("デリート:::" + info[i]);
+                if (info[i].Exists)
+                {
+                    if ((info[i].Attributes & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+                    {
+                        info[i].Attributes = FileAttributes.Normal;
+                    }
                     if (Application.platform != RuntimePlatform.WindowsEditor)
                     {
-
-                        //folderPath = Application.persistentDataPath + "/" + titleText.text + ".png";
                         ImagePath = Application.persistentDataPath + "/" + info[i].Name.Substring(0, info[i].Name.Length - 5);
                     }
                     else
@@ -173,13 +167,11 @@ public class ScrollController : MonoBehaviour
                         print("persistent" + Application.dataPath + "/" + info[i].Name.Substring(0, info[i].Name.Length - 5));
                     }
                     File.Delete(ImagePath + ".png");
-                    info [i].Delete ();
-				}
-			}
-			i++;
-		}
-		op.allowSceneActivation = true;
-	}
-
-    
+                    info[i].Delete();
+                }
+            }
+            i++;
+        }
+        op.allowSceneActivation = true;
+    }
 }

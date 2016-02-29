@@ -2,17 +2,16 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class BigImage : MonoBehaviour {
+public class BigImage : MonoBehaviour
+{
 
     private Image bigImage;
     private GameObject ImageCanvasObj;
-    private Canvas ImageCanvas;
-    [SerializeField]
-    private GameObject ShowCanvas;
-    [SerializeField]
-    private GameObject ImageObj;
     private Image screen;
-   
+
+    public GameObject ShowCanvas;
+    public GameObject ImageObj;
+
     void Awake()
     {
         ImageCanvasObj = GameObject.Find("ImageCanvas");
@@ -20,9 +19,10 @@ public class BigImage : MonoBehaviour {
         screen = ImageObj.GetComponent<Image>();
     }
 
-	public void ImageButton() {
+    public void ImageButton()
+    {
         bigImage.sprite = screen.sprite;
         ImageCanvasObj.GetComponent<Canvas>().enabled = true;
         ShowCanvas.SetActive(false);
-	}
+    }
 }

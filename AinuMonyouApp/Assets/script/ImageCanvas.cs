@@ -2,11 +2,10 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class ImageCanvas : MonoBehaviour {
+public class ImageCanvas : MonoBehaviour
+{
 
-    private Image bigImage;
-    [SerializeField]
-    private GameObject ShowCanvas;
+    public Canvas ShowCanvas;
 
     void Start()
     {
@@ -17,6 +16,6 @@ public class ImageCanvas : MonoBehaviour {
     {
 
         this.gameObject.GetComponent<Canvas>().enabled = false;
-        ShowCanvas.SetActive(true);
+        ShowCanvas.enabled = true;
     }
 }

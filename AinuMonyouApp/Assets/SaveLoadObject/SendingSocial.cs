@@ -11,7 +11,9 @@ public class SendingSocial : MonoBehaviour
     private FileInfo[] info;
     private ScrollController scroll;
     private int Number;
-    public GameObject Parent;
+
+    public GameObject NodePrefab;
+
     void Start()
     {
 
@@ -20,26 +22,24 @@ public class SendingSocial : MonoBehaviour
         Message = "アイヌ文様つくったよ！ #AinuMonyouDesign";
         URL = "";
 
-        this.Number = Parent.GetComponent<LoadButtonParam>().Number;
+        this.Number = NodePrefab.GetComponent<LoadButtonParam>().Number;
         scroll = FindObjectOfType<ScrollController>();
-        
+
     }
 
     public void SnsButton()
     {
         print("共有ボタン");
         print(ImagePath);
-		if (Application.platform != RuntimePlatform.WindowsEditor)
+        if (Application.platform != RuntimePlatform.WindowsEditor)
         {
-            
-            //folderPath = Application.persistentDataPath + "/" + titleText.text + ".png";
             ImagePath = Application.persistentDataPath + "/" + info[Number].Name.Substring(0, info[Number].Name.Length - 5);
-		}
+        }
         else
         {
             ImagePath = Application.dataPath + "/" + info[Number].Name.Substring(0, info[Number].Name.Length - 5);
-            print("persistent"+Application.dataPath+"/"+ info[Number].Name.Substring(0, info[Number].Name.Length - 5));
+            print("WindowsEditor時のアクセス場所:::" + Application.dataPath + "/" + info[Number].Name.Substring(0, info[Number].Name.Length - 5));
         }
-        SWorker.SocialWorker.CreateChooser(Message,ImagePath + ".png");
+        SWorker.SocialWorker.CreateChooser(Message, ImagePath + ".png");
     }
 }

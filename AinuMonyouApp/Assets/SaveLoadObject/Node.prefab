@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867320862f4324144b59920fc011774f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 118296}
+  NodePrefab: {fileID: 118296}
 --- !u!114 &11481620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -993,6 +993,10 @@ Prefab:
       propertyPath: ShowCanvas
       value: 
       objectReference: {fileID: 126286, guid: 7fde00039a581472f9a00fd3cfa80c3b, type: 2}
+    - target: {fileID: 0}
+      propertyPath: NodePrefab
+      value: 
+      objectReference: {fileID: 118296}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118296}

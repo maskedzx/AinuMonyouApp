@@ -20,14 +20,10 @@ public class patternParam : MonoBehaviour {
     {
 		try{
         _objectParam.PartsNumber = this.partsNumber;
-
-			print("なぜか塗る"+this.gameObject.transform.localPosition);
 		_objectParam.Position = this.gameObject.transform.localPosition;
-			print(_objectParam.Position);
         _objectParam.Scale = this.gameObject.transform.localScale;
         _objectParam.Rotate = this.gameObject.transform.localRotation;
 		}catch (MissingReferenceException e){
-			print (e.Message);
 			Debug.LogError (e.Message);
 		}
         return _objectParam;
